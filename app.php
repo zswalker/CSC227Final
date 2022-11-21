@@ -8,9 +8,8 @@
 	<link href="style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-
+	<php?
+		echo "test"
+	?>
 </body>
 </html>
-<php?
-	echo "test"
-?>
