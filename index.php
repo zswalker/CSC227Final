@@ -10,6 +10,7 @@
 <body>
   <?php
     print "Initital Homepage Test";
+	print "Initital Homepage Test";
   ?>
 </body>
 </html>
