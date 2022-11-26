@@ -9,7 +9,7 @@
 
 <body>
   <?php
-    print "Initital Homepage"
+    print "Initital Homepage test"
   ?>
 </body>
 </html>
