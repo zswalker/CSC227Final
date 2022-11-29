@@ -1,4 +1,4 @@
-create table if not exists inventory(id serial primary key, car_year int(4) not null, make varchar(30) not null, model varchar(30) not null, car_type varchar(30) not null, miles int(6) not null, price int(8) not null);
+create table if not exists inventory(id serial primary key, car_year YEAR not null, make varchar(30) not null, model varchar(30) not null, car_type varchar(30) not null, miles int(6) not null, price int(8) not null);
 
 insert into inventory(car_year, make, model, car_type, miles, price) values
   (2005, 'Chevy', 'Silverado', 'Truck', 101050, 58000),
