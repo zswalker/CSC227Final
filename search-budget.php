@@ -11,11 +11,11 @@
     <?php
 		$dbhost = getenv("MYSQL_SERVICE_HOST");
 		$dbport = getenv("MYSQL_SERVICE_PORT");
-		$dbuser = getenv("inventoryusername");
-		$dbpwd = getenv("inventorypassword");
+		$dbuser = getenv("databaseusername");
+		$dbpwd = getenv("databasepassword");
 		$dbname = getenv("databasename");
 
-		$conn = mysqli_connect($dbhost, $dbuser, $dbpwd, $dbname);
+		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
 			exit();
@@ -30,8 +30,8 @@
 					$row['price']."</td></tr>";
 				}
 			}
-			$conn->close();
 		}
+		$conn->close();
 	
     ?>
 </body>
