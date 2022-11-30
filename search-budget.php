@@ -10,13 +10,16 @@
 <body>
     <?php
 		$dbhost = getenv("MYSQL_SERVICE_HOST");
+		$dbport = getenv("MYSQL_SERVICE_PORT");
 		$dbuser = getenv("inventoryusername");
 		$dbpwd = getenv("inventorypassword");
 		$dbname = getenv("inventoryname");
+
 		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
-		}else {
+			exit();
+		} else {
 			$sql = "SELECT * FROM inventory";
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
