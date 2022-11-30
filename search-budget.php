@@ -15,7 +15,7 @@
 		$dbpwd = getenv("inventorypassword");
 		$dbname = getenv("databasename");
 
-		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+		$conn = new mysqli_connect($dbhost, $dbuser, $dbpwd, $dbname);
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
 			exit();
