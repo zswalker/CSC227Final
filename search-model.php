@@ -8,8 +8,22 @@
 </head>
 
 <body>
-    <?php
-    print "Initial Test"
+<?php
+		$dbhost = getenv("MYSQL_SERVICE_HOST");
+		$dbport = getenv("MYSQL_SERVICE_PORT");
+		$dbuser = getenv("databaseusername");
+		$dbpwd = getenv("databasepassword");
+		$dbname = getenv("databasename");
+
+		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+		if($conn->connect_error){
+			echo "Connection error: ".mysqli_connect_error();
+			exit();
+		} else {
+			echo "Connection SUCCESS"
+		}
+		$conn->close();
+	
     ?>
 </body>
 </html>
