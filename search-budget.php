@@ -13,7 +13,7 @@
 		$dbport = getenv("MYSQL_SERVICE_PORT");
 		$dbuser = getenv("inventoryusername");
 		$dbpwd = getenv("inventorypassword");
-		$dbname = getenv("inventoryname");
+		$dbname = getenv("databasename");
 
 		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 		if($conn->connect_error){
