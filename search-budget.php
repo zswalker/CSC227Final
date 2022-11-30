@@ -12,7 +12,7 @@
 		$dbhost = getenv("MYSQL_SERVICE_HOST");
 		$dbuser = getenv("inventoryusername");
 		$dbpwd = getenv("inventorypassword");
-		$dbname = getenv("inventoryname")
+		$dbname = getenv("inventoryname");
 		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
