@@ -9,7 +9,7 @@
 
 <body>
     <?php
-		$conn = new mysqli('localhost', 'root', '', 'test');
+		$conn = new mysqli('localhost', 'root', '', 'inventory');
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
 		}
