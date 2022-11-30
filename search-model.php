@@ -20,7 +20,7 @@
 			echo "Connection error: ".mysqli_connect_error();
 			exit();
 		} else {
-			echo "Connection SUCCESS"
+			echo "Connection SUCCESS";
 		}
 		$conn->close();
 	
