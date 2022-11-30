@@ -9,7 +9,10 @@
 
 <body>
     <?php
-		$conn = mysqli_connect('localhost', 'root', '', 'test');
+		$conn = new mysqli('localhost', 'root', '', 'test');
+		if($conn->connect_error){
+			echo "Connection error: ".mysqli_connect_error();
+		}
 
 		$sql = "SELECT * FROM inventory";
 		$result = $conn->query($sql);
