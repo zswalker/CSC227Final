@@ -12,8 +12,7 @@
 		$conn = new mysqli('localhost', 'root', '', 'inventory');
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
-		}
-		else:
+		}else:
 			$sql = "SELECT * FROM inventory";
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
