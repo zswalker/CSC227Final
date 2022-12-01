@@ -15,8 +15,8 @@
 		$dbpwd = getenv("databasepassword");
 		$dbname = getenv("databasename");
 
-		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-		if($conn->connect_error){
+		$conn = mysqli_connect($dbhost, $dbuser, $dbpwd, $dbname);
+		if(!$conn){
 			echo "Connection error: ".mysqli_connect_error();
 			exit();
 		} else {
