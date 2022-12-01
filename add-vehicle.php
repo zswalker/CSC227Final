@@ -21,7 +21,7 @@
 		} else {
 			echo "Connection SUCCESS";
 		}
-		$conn->close();
+		close($conn);
 	
     ?>
 </body>
