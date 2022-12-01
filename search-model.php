@@ -18,7 +18,6 @@
 		$conn = mysqli_connect($dbhost, $dbuser, $dbpwd, $dbname);
 		if(!$conn){
 			echo "Connection error: ".mysqli_connect_error();
-			exit();
 		} else {
 			echo "Connection SUCCESS";
 		}
