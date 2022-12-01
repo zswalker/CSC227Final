@@ -11,10 +11,9 @@
 	<?php
 		$dbhost = getenv("MYSQL_SERVICE_HOST");
 		$dbport = getenv("MYSQL_SERVICE_PORT");
-		$dbuser = getenv("databaseuser");
-		$dbpwd = getenv("databasepassword");
-		$rootpwd = getenv("databaserootpass");
-		$dbname = getenv("databasename");
+		$dbuser = getenv('root');
+		$rootpwd = getenv("MYSQL_ROOT_PASSWORD");
+		$dbname = getenv("MYsQL_DATABASE");
 
 		$conn = new mysqli($dbhost, 'root', $rootpwd, $dbname);
 		if($conn->connect_error){
