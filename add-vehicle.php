@@ -8,14 +8,14 @@
 </head>
 
 <body>
-<?php
+	<?php
 		$dbhost = getenv("MYSQL_SERVICE_HOST");
 		$dbport = getenv("MYSQL_SERVICE_PORT");
-		$dbuser = getenv('root');
-		$dbpwd = getenv("MYSQL_ROOT_PASSWORD");
+		$dbuser = getenv("MYSQL_USER");
+		$dbpwd = getenv("MYSQL_PASSWORD");
 		$dbname = getenv("MYSQL_DATABASE");
 
-		$conn = mysqli_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
+		$conn = mysqli_connect($dbhost, $dbuser, $dbpwd, $dbname);
 		if(!$conn){
 			echo "Connection error: ".mysqli_connect_error();
 		} else {
