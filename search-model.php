@@ -8,20 +8,19 @@
 </head>
 
 <body>
-<?php
+	<?php
 		$dbhost = getenv("MYSQL_SERVICE_HOST");
 		$dbport = getenv("MYSQL_SERVICE_PORT");
-		$dbuser = getenv("dbuser");
-		$dbpwd = getenv("dbpass");
-		$dbname = getenv("dbname");
+		$dbuser = getenv("MYSQL_USER");
+		$dbpwd = getenv("MYSQL_PASSWORD");
+		$dbname = getenv("MYSQL_DATABASE");
 
-		$conn = mysqli_connect($dbhost, $dbuser, $dbpwd, $dbname);
-		if(!$conn){
+		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
 		} else {
 			echo "Connection SUCCESS";
 		}
-		close($conn);
 	
     ?>
 </body>
