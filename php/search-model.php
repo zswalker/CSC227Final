@@ -33,7 +33,7 @@
 				echo("<tr><td>".$row["car_year"]."</td>
 				<td>".$row["make"]."</td><td>".$row["model"]."</td>
 				<td>".$row["style"]."</td><td>".$row["miles"]."</td><td>"
-				.number_format($row["price"], ",")."</td></tr>");
+				.number_format($row["price"], 0, ",")."</td></tr>");
 			}
 			echo("</table>");
 			echo("<h3>Thank you for using my program.</h3>");
