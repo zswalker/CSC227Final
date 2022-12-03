@@ -29,7 +29,7 @@
 					$car_type = $row['car_type'];
 					$miles = $row['miles'];
 					$price = $row['price'];
-					echo $year." ".$make." ".$model.", ".$car_type.", Milage: ".$miles.", $".$price."\n";
+					print $year." ".$make." ".$model.", ".$car_type.", Milage: ".$miles.", $".$price."\n";
 				}
 			}
 		}

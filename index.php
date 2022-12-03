@@ -15,19 +15,33 @@
 		$dbpwd = getenv("MYSQL_PASSWORD");
 		$dbname = getenv("MYSQL_DATABASE");
 
+		function insert_vehicle(int $v_year, $v_make, $v_model, $v_type, int $v_miles, int $v_price){
+			$sql = "SELECT * FROM inventory";
+			$result = $conn->query($sql);
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+					$v_id = $row['id'];
+				}
+			}
+			$v_id += 1;
+			$sql2 = "insert into inventory(id, car_year, make, model, car_type, miles, price) values
+			("$v_id.",".$v_year.",".$v_make.",".$v_model.",".$v_type.",".$v_miles.",".$v_price.")";
+			$result = $conn->query($sql2);
+			print "Vehicle Added";
+		}
+
 		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
 		} else {
+			
 			$sql = "create table if not exists inventory(id serial primary key, car_year YEAR not null, make varchar(30) not null, model varchar(30) not null, car_type varchar(30) not null, miles int(6) not null, price int(8) not null)";
 			$result = mysqli_query($conn, $sql);
-			$sql2 = "insert into inventory(car_year, make, model, car_type, miles, price) values
-			(1, 2005, 'Chevy', 'Silverado', 'Truck', 101050, 58000),
-			(2, 2008, 'Ford', 'Mustang GT', 'Coupe', 65658, 16800),
-			(3, 1980, 'Chevy', 'Corvette','Coupe', 95000, 22500),
-			(4, 2019, 'Honda', 'Civic Type R', 'Sedan', 21800, 35899),
-			(5, 2022, 'Acura', 'NSX', 'Coupe', 20, 171400)";
-			$result = mysqli_query($conn, $sql2);
+			insert_vehicle(2005, 'Chevy', 'Silverado', 'Truck', 101050, 58000);
+			insert_vehicle(2008, 'Ford', 'Mustang GT', 'Coupe', 65658, 16800);
+			insert_vehicle(1980, 'Chevy', 'Corvette','Coupe', 95000, 22500);
+			insert_vehicle(2019, 'Honda', 'Civic Type R', 'Sedan', 21800, 35899);
+			insert_vehicle(2022, 'Acura', 'NSX', 'Coupe', 20, 171400);
 			
 		}
 	
