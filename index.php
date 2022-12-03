@@ -20,6 +20,8 @@
 			echo "Connection error: ".$conn->connect_error;
 			exit();
 		} else {
+			$sql2 = "DROP TABLE inventory";
+			$result = mysqli_query($conn, $sql2);
 			$sql = "create table if not exists inventory(id serial primary key,
 			 car_year YEAR not null, make varchar(30) not null, model varchar(30) not null,
 			 style varchar(30) not null, miles int(6) not null, price int(8) not null, 
