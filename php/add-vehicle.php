@@ -14,10 +14,6 @@
 	$v_miles = $_POST['miles'];
 	$v_price = $_POST['price'];
 
-	// Tests
-	echo $v_year." ".$v_make." ".$v_model."<br>";
-	echo $v_style." ".$v_miles." ".$v_price."<br>";
-
 	// Connect to database and executes main. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 	if($conn->connect_error){
