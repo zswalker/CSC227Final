@@ -21,16 +21,20 @@
         if($conn->connect_error){
             echo "Connection error: ".mysqli_connect_error();
         } else {
+            // SQL Query to search for model, diplays error if necessary
             $sql = "SELECT * FROM inventory";
             $result = $conn->query($sql);
             if (!$result) {
                 die("Could not successfully run query from $dbname: ".mysqli_error($conn));
             }
+
+            // Displays message if no results found
             if (mysqli_num_rows($result) == 0) {
                 echo "No records found";
             } else {
+                // else: Prints table of vehicles found
                 echo "<h1>Used Car Lot</h1>";
-                echo "<table border='1'><table><thead><tr><th>ID</th><th>Year</th><th>Make</th>
+                echo "<table border='1'><thead><tr><th>ID</th><th>Year</th><th>Make</th>
                 <th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"; 
                 while($row = mysqli_fetch_assoc($result)) {
                     echo("<tr><td>".$row["id"]."</td><td>".$row["car_year"]."</td>
