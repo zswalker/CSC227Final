@@ -7,12 +7,12 @@
 	$dbname = getenv("MYSQL_DATABASE");
 
 	// Create variable used in form
-	$car_year = $_POST['year'];
-	$make = $_POST['make'];
-	$model = $_POST['model'];
-	$style = $_POST['style'];
-	$miles = $_POST['miles'];
-	$price = $_POST['price'];
+	$v_year = $_POST['year'];
+	$v_make = $_POST['make'];
+	$v_model = $_POST['model'];
+	$v_style = $_POST['style'];
+	$v_miles = $_POST['miles'];
+	$v_price = $_POST['price'];
 
 	// Connect to database and executes main. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
@@ -21,7 +21,7 @@
 	} else {
 		// Test entries, if valid add vehicle
 		$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
-		VALUES($car_year, $make, $model, $style, $miles, $price, 'Not Sold')";
+		VALUES($v_year, $v_make, $v_model, $v_style, $v_miles, $v_price, 'Not Sold')";
 		if(!$conn->query($sql)){
 			echo "Error - ".$conn->error;
 		} else {
