@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--Name: Group 4
+		Filename: search-model
+		Author: Zach Walker
+		Purpose: Webpage to search by model in sql database
+	-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search by Model</title>
+	<link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container">
+	<header>
+		<h1>Search by Vehicle Model</h1>
+	</header>
+	<main>
+	<form action="search-model.php" method="post">
+        <legend>User Information</legend>
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" placeholder="EX: Civic">
+    <br />
+	<button type="submit" id="search_model">Search</button>
+	</form>
+<br />
+<br />
+	<a href="index.php">Return to Home Page</a>
+	</main>
+</div>
+</body>
+</html>

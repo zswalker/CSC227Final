@@ -1,39 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Car Lot Search</title>
-	<link href="style.css" type="text/css" rel="stylesheet" />
-</head>
+<?php
+	$v_model = $_POST['model'];
+	$dbhost = getenv("MYSQL_SERVICE_HOST");
+	$dbport = getenv("MYSQL_SERVICE_PORT");
+	$dbuser = getenv("MYSQL_USER");
+	$dbpwd = getenv("MYSQL_PASSWORD");
+	$dbname = getenv("MYSQL_DATABASE");
 
-<body>
-	<?php
-		$dbhost = getenv("MYSQL_SERVICE_HOST");
-		$dbport = getenv("MYSQL_SERVICE_PORT");
-		$dbuser = getenv("MYSQL_USER");
-		$dbpwd = getenv("MYSQL_PASSWORD");
-		$dbname = getenv("MYSQL_DATABASE");
-
-		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-		if($conn->connect_error){
-			echo "Connection error: ".mysqli_connect_error();
-		} else {
-			$sql = "SELECT * FROM inventory";
-			$result = $conn->query($sql);
-			if ($result->num_rows > 0) {
-				while($row = $result->fetch_assoc()) {
-					$year = $row['car_year'];
-					$make = $row['make'];
-					$model = $row['model'];
-					$car_type = $row['car_type'];
-					$miles = $row['miles'];
-					$price = $row['price'];
-					print $year." ".$make." ".$model.", ".$car_type.", Milage: ".$miles.", $".$price."\n";
-				}
+	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+	if($conn->connect_error){
+		echo "Connection error: ".mysqli_connect_error();
+	} else {
+		$sql = "SELECT car_year, make, model, car_type, miles, price FROM inventory WHERE model='$v_model'";
+		$result = $conn->query($sql);
+		print("<h1>Search Completed by Employee ID</h1>");
+		if (!$result) {
+			die("Could not successfully run query from $dbname: ".mysqli_error($conn));
+        }
+        if (mysqli_num_rows($result) == 0) {
+			print("No records found with Model: $v_model");
+        } else {
+			print("<h1></h1>");
+			print("<table border = \"1\">");
+			print("<table><thead><tr><th>Year</th><th>Make</th><th>Model</th><th>Type</th><th>Miles</th><th>Price</th></tr></thead><tbody>"); 
+			while($row = mysqli_fetch_assoc($result)) {
+				print ("<tr><td>".$row["car_year"]."</td><td>".$row["make"]."</td><td>".$row["model"]."</td><td>".$row["car_type"]."</td><td>".$row["miles"]."</td><td>"
+				.number_format($row["price"], 2, ".", ",")."</td></tr>");
 			}
-		}
-	
-    ?>
-</body>
-</html>
+			print ("</table>");
+			print ("<h3>Thank you for using my program.</h3>");
+			print ('<br><footer><a calss="white" href="search-model.html">
+	 				Return to Form Entry</a></footer>');
+	  	}	
+	}
+?>
