@@ -24,11 +24,8 @@
 			while($row = mysqli_fetch_row($result)){
 				$tables[] = $row[0];
 			}
-			$sql = "create table if not exists inventory(id serial primary key, car_year YEAR not null, make varchar(30) not null, model varchar(30) not null, car_type varchar(30) not null, miles int(6) not null, price int(8) not null)";
-			$result = $conn->query($sql);
-			if ($result->num_rows > 0) {
-
-			}
+			$result = mysqli_query($conn, "SELECT * FROM ".$table);
+			$num_fileds = mysqli_num_fields($result);
 		}
 	
 ?>
