@@ -35,17 +35,10 @@
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
 		} else {
-			
-			$sql = "create table if not exists inventory(id serial primary key, car_year YEAR not null, make varchar(30) not null, model varchar(30) not null, car_type varchar(30) not null, miles int(6) not null, price int(8) not null)";
-			$result = mysqli_query($conn, $sql);
 			$sql2 = "DELETE FROM inventory";
 			$result = mysqli_query($conn, $sql2);
-			insert_vehicle($conn, 2005, 'Chevy', 'Silverado', 'Truck', 101050, 58000);
-			insert_vehicle($conn, 2008, 'Ford', 'Mustang GT', 'Coupe', 65658, 16800);
-			insert_vehicle($conn, 1980, 'Chevy', 'Corvette','Coupe', 95000, 22500);
-			insert_vehicle($conn, 2019, 'Honda', 'Civic Type R', 'Sedan', 21800, 35899);
-			insert_vehicle($conn, 2022, 'Acura', 'NSX', 'Coupe', 20, 171400);
-			
+			$sql3 = "create table if not exists inventory(id serial primary key, car_year YEAR not null, make varchar(30) not null, model varchar(30) not null, car_type varchar(30) not null, miles int(6) not null, price int(8) not null)";
+			$result = mysqli_query($conn, $sql3);			
 		}
 	
 ?>
