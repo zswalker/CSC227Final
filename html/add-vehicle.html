@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+		Filename: add_vehicle.html
+		Author: Zach Walker
+		Purpose: Webpage to add vehicle to database
+	-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add Vehicle</title>
+	<link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container">
+	<header>
+		<h1>Add Vehicle</h1>
+	</header>
+	<main>
+	<form action="add_vehicle.php" method="post">
+    <fieldset>
+        <legend>Vehicle Information</legend>
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" placeholder="EX: 1990">
+        <label for="make">Make:</label>
+        <input type="text" id="make" name="make" placeholder="EX: Honda">
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" placeholder="EX: Civic">
+        <label>Select a Body Style:</label>
+			<select name="style">
+			  <option value="Convertible">Convertible</option>
+			  <option value="Coupe">Coupe</option>
+              <option value="Convertible">Convertible</option>
+			  <option value="Hatchback">Hatchback</option>
+              <option value="Sedan">Sedan</option>
+			  <option value="SUV">SUV</option>
+			  <option value="Truck">Truck</option>
+			</select>
+        <label for="miles">Miles:</label>
+        <input type="number" id="miles" name="miles" placeholder="EX: 10000">
+        <label for="price">Price: $</label>
+        <input type="number" id="price" name="price" placeholder="EX: 13500">
+    </fieldset>
+<br />
+	<button type="submit" id="add_vehicle">Add Vehicle</button>
+	</form>
+<br />
+<br />
+	<a href="index.php">Return to Home Page</a>
+	</main>
+</div>
+</body>
+</html>
