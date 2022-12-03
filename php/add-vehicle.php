@@ -13,7 +13,7 @@
 		$sql2 = "insert into inventory(id, car_year, make, model, car_type, miles, price) values
 		(".$v_id.",".$v_year.",".$v_make.",".$v_model.",".$v_type.",".$v_miles.",".$v_price.")";
 		$result = $conn->query($sql2);
-		print "Vehicle Added\n";
+		echo "Vehicle Added<br>";
 	}
 
 	// Create variables for connection
