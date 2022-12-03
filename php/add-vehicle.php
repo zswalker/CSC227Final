@@ -1,18 +1,9 @@
 <?php
 	// Function for adding a vehicle to database
 	function insert_vehicle($conn, int $v_year, $v_make, $v_model, $v_type, int $v_miles, int $v_price){
-		$sql = "SELECT * FROM inventory";
+		$sql = "insert into inventory(car_year, make, model, car_type, miles, price) values
+		(".$v_year.",".$v_make.",".$v_model.",".$v_type.",".$v_miles.",".$v_price.")";
 		$result = $conn->query($sql);
-		$v_id = 0;
-		if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-				$v_id = $row['id'];
-			}
-		}
-		$v_id += 1;
-		$sql2 = "insert into inventory(id, car_year, make, model, car_type, miles, price) values
-		(".$v_id.",".$v_year.",".$v_make.",".$v_model.",".$v_type.",".$v_miles.",".$v_price.")";
-		$result = $conn->query($sql2);
 		echo "Vehicle Added<br>";
 	}
 
@@ -36,6 +27,7 @@
 	if($conn->connect_error){
 		echo "Connection error: ".mysqli_connect_error();
 	} else {
+		// Test entries, if valid add vehicle
 		insert_vehicle($conn, $car_year, $make, $model, $style, $miles, $price);
 	}
 ?>
