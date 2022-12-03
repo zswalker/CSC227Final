@@ -24,5 +24,6 @@
 		VALUES($car_year, $make, $model, $style, $miles, $price)";
 		$result = $conn->query($sql);
 		echo "Vehicle Added<br>";
+		echo '<br /><a href="..\index.php">Return to Home Page</a>';
 	}
 ?>
