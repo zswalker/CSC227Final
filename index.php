@@ -55,8 +55,8 @@
 					<td>
 						<ul>
 							<li> <a href="html\search-model.html">Search By Year, Make, and Model</a></li>
-							<li> <a href="html\budgetpage\search-budget.html">Search By Budget</a></li>
-							<li> <a href="html\stylepage\search-style.html">Search By Style</a></li>
+							<li> <a href="html\search-budget.html">Search By Budget</a></li>
+							<li> <a href="html\search-style.html">Search By Style</a></li>
 							<li> <a href="html\add-vehicle.html">Add Vehicle</a></li>
 							<li> <a href="php\view-all.php">View All Vehicles</a></li>
 						</ul>
