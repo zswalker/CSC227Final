@@ -15,28 +15,13 @@
 		$dbpwd = getenv("MYSQL_PASSWORD");
 		$dbname = getenv("MYSQL_DATABASE");
 
-		function insert_vehicle($conn, int $v_year, $v_make, $v_model, $v_type, int $v_miles, int $v_price){
-			$sql = "SELECT * FROM inventory";
-			$result = $conn->query($sql);
-			$v_id = 0;
-			if ($result->num_rows > 0) {
-				while($row = $result->fetch_assoc()) {
-					$v_id = $row['id'];
-				}
-			}
-			$v_id += 1;
-			$sql2 = "insert into inventory(id, car_year, make, model, car_type, miles, price) values
-			(".$v_id.",".$v_year.",".$v_make.",".$v_model.",".$v_type.",".$v_miles.",".$v_price.")";
-			$result = $conn->query($sql2);
-			print "Vehicle Added\n";
-		}
-
 		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
 		} else {
-			
-			$sql3 = "create table if not exists inventory(id serial primary key, car_year YEAR not null, make varchar(30) not null, model varchar(30) not null, car_type varchar(30) not null, miles int(6) not null, price int(8) not null)";
+			$sql4 = "DROP TABLE inventory";
+			$result = mysqli_query($conn, $sql4);
+			$sql3 = "create table if not exists inventory(id serial primary key, car_year YEAR not null, make varchar(30) not null, model varchar(30) not null, style varchar(30) not null, miles int(6) not null, price int(8) not null)";
 			$result = mysqli_query($conn, $sql3);			
 		}
 	
@@ -66,10 +51,10 @@
 				<tr>
 					<td>
 						<ul>
-							<li> <a href="model\search-model.php">Search By Year, Make, and Model</a></li>
-							<li> <a href="search-budget.php">Search By Budget</a></li>
-							<li> <a href="search-style.php">Search By Style</a></li>
-							<li> <a href="add-vehicle.php">Add Vehicle</a></li>
+							<li> <a href="html\search-model.html">Search By Year, Make, and Model</a></li>
+							<li> <a href="html\budgetpage\search-budget.html">Search By Budget</a></li>
+							<li> <a href="html\stylepage\search-style.html">Search By Style</a></li>
+							<li> <a href="html\add-vehicle.html">Add Vehicle</a></li>
 						</ul>
 					</td>
 				</tr>
