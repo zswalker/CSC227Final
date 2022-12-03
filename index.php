@@ -35,8 +35,7 @@
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
 		} else {
-			$sql2 = "DELETE FROM inventory";
-			$result = mysqli_query($conn, $sql2);
+			
 			$sql3 = "create table if not exists inventory(id serial primary key, car_year YEAR not null, make varchar(30) not null, model varchar(30) not null, car_type varchar(30) not null, miles int(6) not null, price int(8) not null)";
 			$result = mysqli_query($conn, $sql3);			
 		}

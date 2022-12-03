@@ -14,6 +14,8 @@
 		
 		function main($conn){
 			// Function Header
+			$sql2 = "DELETE FROM inventory";
+			$result = mysqli_query($conn, $sql2);
 			insert_vehicle($conn, 2005, 'Chevy', 'Silverado', 'Truck', 101050, 58000);
 			insert_vehicle($conn, 2008, 'Ford', 'Mustang GT', 'Coupe', 65658, 16800);
 			insert_vehicle($conn, 1980, 'Chevy', 'Corvette','Coupe', 95000, 22500);
