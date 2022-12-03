@@ -18,7 +18,7 @@
 		function insert_vehicle(int $v_year, $v_make, $v_model, $v_type, int $v_miles, int $v_price){
 			$sql = "SELECT * FROM inventory";
 			$result = $conn->query($sql);
-			$v_id = 1;
+			$v_id = 0;
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 					$v_id = $row['id'];
@@ -26,7 +26,7 @@
 			}
 			$v_id += 1;
 			$sql2 = "insert into inventory(id, car_year, make, model, car_type, miles, price) values
-			("$v_id.",".$v_year.",".$v_make.",".$v_model.",".$v_type.",".$v_miles.",".$v_price.")";
+			(".$v_id.",".$v_year.",".$v_make.",".$v_model.",".$v_type.",".$v_miles.",".$v_price.")";
 			$result = $conn->query($sql2);
 			print "Vehicle Added\n";
 		}
