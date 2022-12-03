@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+		Filename: search-style.html
+		Author: Zach Walker
+		Purpose: Webpage to search by body style in sql database
+	-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search by Body Style</title>
+	<link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container">
+	<header>
+		<h1>Search by Vehicle Body Style</h1>
+	</header>
+	<main>
+	<form action="..\php\search-style.php" method="post">
+        <legend>Vehicle Information</legend>
+        <label for="style">Body Style:</label>
+        <input type="text" id="style" name="style" placeholder="EX: Sedan">
+    <br />
+	<button type="submit" id="search">Search</button>
+	</form>
+<br />
+<br />
+	<a href="..\index.php">Return to Home Page</a>
+	</main>
+</div>
+</body>
+</html>
