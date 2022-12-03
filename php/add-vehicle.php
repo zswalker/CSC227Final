@@ -21,43 +21,44 @@
 	} else {
 		// Tests Form variables and adds vehicle to database
 
-		while True{
+		if(isset($_POST['formSubmit'])){
+			$error_message = "";
+			
 			// Verify year
 			if ($v_year < 1886 || $v_year > 2025){
-				echo "Error - Invalid Year Entered";
-				break;
+				$error_message = "Error - Invalid Year Entered (Must be 1886 - 2025)";
 			}
 
 			// Verify model entry
 			if ($v_model == ""){
-				echo "Error - Model not entered";
-				break;
+				$error_message = "Error - Model not entered";
 			}
 
 			// Verify miles
 			if ($v_miles < 0 || $v_miles > 500000){
-				echo "Error - Invalid Miles Entered (Must be 0 - 500,000)";
-				break;
+				$error_message = "Error - Invalid Miles Entered (Must be 0 - 500,000)";
 			}
 
 			// Verify price
 			if ($v_price < 0 || $v_miles > 10000000){
-				echo "Error - Invalid Price Entered (Must be 0 - 10,000,000)";
-				break;
+				$error_message = "Error - Invalid Price Entered (Must be 0 - 10,000,000)";
 			}
 
-			// Adds vehicle to database, displays error if necessary
-			$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
-			VALUES($v_year, '$v_make', '$v_model', '$v_style', $v_miles, $v_price, 'Not Sold')";
-			if(!mysqli_query($conn, $sql)){
-				echo "Error - ".$conn->error;
-				break;
+			if ($error_message != ""){
+				echo "<p>".$error_message."<p>";
 			} else {
-				echo "Vehicle Successfully Added!<br>";
+				// Adds vehicle to database, displays error if necessary
+				$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
+				VALUES($v_year, '$v_make', '$v_model', '$v_style', $v_miles, $v_price, 'Not Sold')";
+				if(!mysqli_query($conn, $sql)){
+					echo "Error - ".$conn->error;
+					exit();
+				} else {
+					echo "Vehicle Successfully Added!<br>";
+				}
+				echo '<br /><a href="..\index.php">Return to Home Page</a>';
+				$conn->close();
 			}
-			echo '<br /><a href="..\index.php">Return to Home Page</a>';
-			$conn->close();
-			break;
 		}
 	}
 ?>
