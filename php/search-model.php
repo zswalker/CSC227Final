@@ -12,7 +12,7 @@
 	} else {
 		$sql = "SELECT car_year, make, model, car_type, miles, price FROM inventory WHERE model='$v_model'";
 		$result = $conn->query($sql);
-		print("<h1>Search Completed by Employee ID</h1>");
+		print("<h1>Search Completed by Vehicle Model</h1>");
 		if (!$result) {
 			die("Could not successfully run query from $dbname: ".mysqli_error($conn));
         }
