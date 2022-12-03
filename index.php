@@ -22,6 +22,8 @@
 				while($row = $result->fetch_assoc()) {
 					$v_id = $row['id'];
 				}
+			} else {
+				$v_id = 1;
 			}
 			$v_id += 1;
 			$sql2 = "insert into inventory(id, car_year, make, model, car_type, miles, price) values
