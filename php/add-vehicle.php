@@ -22,8 +22,8 @@
 		// Test entries, if valid add vehicle
 		$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
 		VALUES($car_year, $make, $model, $style, $miles, $price, 'Not Sold')";
-		if(!$result = $conn->query($sql)){
-			echo "Error - ".$result->error;
+		if(!$conn->query($sql)){
+			echo "Error - ".$conn->error;
 		} else {
 			echo "Vehicle Added<br>";
 		}
