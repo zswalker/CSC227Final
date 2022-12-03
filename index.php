@@ -28,15 +28,7 @@
 			(2019, 'Honda', 'Civic Type R', 'Sedan', 21800, 35899),
 			(2022, 'Acura', 'NSX', 'Coupe', 20, 171400)";
 			$result = mysqli_query($conn, $sql2);
-			$tables = array();
-			$result = mysqli_query($conn, "SHOW TABLES");
-			while($row = mysqli_fetch_row($result)){
-				$tables[] = $row[0];
-			}
-			foreach($tables as $table){
-				$result = mysqli_query($conn, "SELECT * FROM ".$table);
-				$num_fileds = mysqli_num_fields($result);
-			}
+			
 		}
 	
 ?>

@@ -19,7 +19,19 @@
 		if($conn->connect_error){
 			echo "Connection error: ".mysqli_connect_error();
 		} else {
-			echo "Connection SUCCESS";
+			$sql = "SELECT * FROM inventory";
+			$result = $conn->query($sql);
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+					$year = $row['car_year'];
+					$make = $row['make'];
+					$model = $row['model'];
+					$car_type = $row['car_type'];
+					$miles = $row['miles'];
+					$price = $row['price'];
+					echo $year." ".$make." ".$model.", ".$car_type.", Milage: ".$miles.", $".$price."\n";
+				}
+			}
 		}
 	
     ?>
