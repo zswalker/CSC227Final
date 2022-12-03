@@ -24,7 +24,7 @@
 			while($row = mysqli_fetch_row($result)){
 				$tables[] = $row[0];
 			}
-			$result = mysqli_query($conn, "SELECT * FROM ".$table);
+			$result = mysqli_query($conn, "SELECT * FROM ".$tables[0]);
 			$num_fileds = mysqli_num_fields($result);
 		}
 	
