@@ -6,8 +6,6 @@
 	$dbpwd = getenv("MYSQL_PASSWORD");
 	$dbname = getenv("MYSQL_DATABASE");
 
-	
-
 	// Connect to database and executes main. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 	if($conn->connect_error){
@@ -15,7 +13,7 @@
 	} else {
 		// Tests Form variables and adds vehicle to database
 
-		if(isset($_POST['formSubmit'])){
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			// Create variable used in form
 			$v_year = $_POST['year'];
 			$v_make = $_POST['make'];
@@ -30,9 +28,19 @@
 				$error_message = "Error - Invalid Year Entered (Must be 1886 - 2025)";
 			}
 
+			// Verify make
+			if (empty($v_make)){
+				$error_message = "Error - Make not selected";
+			}
+
 			// Verify model entry
-			if ($v_model == ""){
+			if (empty($v_model)){
 				$error_message = "Error - Model not entered";
+			}
+
+			// Verify Style
+			if (empty($v_style)){
+				$error_message = "Error - Body Style not selected";
 			}
 
 			// Verify miles
