@@ -15,7 +15,7 @@
 		$dbpwd = getenv("MYSQL_PASSWORD");
 		$dbname = getenv("MYSQL_DATABASE");
 
-		function insert_vehicle(int $v_year, $v_make, $v_model, $v_type, int $v_miles, int $v_price){
+		function insert_vehicle($conn, int $v_year, $v_make, $v_model, $v_type, int $v_miles, int $v_price){
 			$sql = "SELECT * FROM inventory";
 			$result = $conn->query($sql);
 			$v_id = 0;
@@ -38,11 +38,11 @@
 			
 			$sql = "create table if not exists inventory(id serial primary key, car_year YEAR not null, make varchar(30) not null, model varchar(30) not null, car_type varchar(30) not null, miles int(6) not null, price int(8) not null)";
 			$result = mysqli_query($conn, $sql);
-			insert_vehicle(2005, 'Chevy', 'Silverado', 'Truck', 101050, 58000);
-			insert_vehicle(2008, 'Ford', 'Mustang GT', 'Coupe', 65658, 16800);
-			insert_vehicle(1980, 'Chevy', 'Corvette','Coupe', 95000, 22500);
-			insert_vehicle(2019, 'Honda', 'Civic Type R', 'Sedan', 21800, 35899);
-			insert_vehicle(2022, 'Acura', 'NSX', 'Coupe', 20, 171400);
+			insert_vehicle($conn, 2005, 'Chevy', 'Silverado', 'Truck', 101050, 58000);
+			insert_vehicle($conn, 2008, 'Ford', 'Mustang GT', 'Coupe', 65658, 16800);
+			insert_vehicle($conn, 1980, 'Chevy', 'Corvette','Coupe', 95000, 22500);
+			insert_vehicle($conn, 2019, 'Honda', 'Civic Type R', 'Sedan', 21800, 35899);
+			insert_vehicle($conn, 2022, 'Acura', 'NSX', 'Coupe', 20, 171400);
 			
 		}
 	
