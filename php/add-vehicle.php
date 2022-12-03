@@ -25,7 +25,7 @@
 	} else {
 		// Test entries, if valid add vehicle
 		$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
-		VALUES($v_year, $v_make, $v_model, $v_style, $v_miles, $v_price, 'Not Sold')";
+		VALUES($v_year, '$v_make', '$v_model', '$v_style', $v_miles, $v_price, 'Not Sold')";
 		if(!mysqli_query($conn, $sql)){
 			echo "Error - ".$conn->error;
 		} else {
