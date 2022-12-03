@@ -1,12 +1,4 @@
 <?php
-	// Function for adding a vehicle to database
-	function insert_vehicle($conn, int $v_year, $v_make, $v_model, $v_style, int $v_miles, int $v_price){
-		$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price) 
-		VALUES(".$v_year.",".$v_make.",".$v_model.",".$v_style.",".$v_miles.",".$v_price.")";
-		$result = $conn->query($sql);
-		echo "Vehicle Added<br>";
-	}
-
 	// Create variables for connection
 	$dbhost = getenv("MYSQL_SERVICE_HOST");
 	$dbport = getenv("MYSQL_SERVICE_PORT");
@@ -28,6 +20,9 @@
 		echo "Connection error: ".mysqli_connect_error();
 	} else {
 		// Test entries, if valid add vehicle
-		insert_vehicle($conn, $car_year, $make, $model, $style, $miles, $price);
+		$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price) 
+		VALUES(".$car_year.",".$make.",".$model.",".$style.",".$miles.",".$price.")";
+		$result = $conn->query($sql);
+		echo "Vehicle Added<br>";
 	}
 ?>
