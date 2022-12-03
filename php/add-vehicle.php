@@ -24,7 +24,7 @@
 		VALUES($car_year, $make, $model, $style, $miles, $price, 'Not Sold')";
 		$result = $conn->query($sql);
 		if(!$result){
-			echo "Error - Could not add vehicle";
+			echo "Error - ".$result->error;
 		} else {
 			echo "Vehicle Added<br>";
 		}
