@@ -30,7 +30,7 @@
                 print("No records found");
             } else {
                 print("<h1></h1>");
-                print("<table border = \"1\">");
+                print('<table border = \"1\">');
                 print("<table><thead><tr><th>Year</th><th>Make</th><th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"); 
                 while($row = mysqli_fetch_assoc($result)) {
                     print ("<tr><td>".$row["car_year"]."</td><td>".$row["make"]."</td><td>".$row["model"]."</td><td>".$row["style"]."</td><td>".$row["miles"]."</td><td>"
