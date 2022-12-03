@@ -40,7 +40,7 @@
                 }
                 echo("</table>");
                 echo("<h3>Thank you for using my program.</h3>");
-                echo('<br><footer><a calss="white" href="search-model.html">
+                echo('<br><footer><a calss="white" href="..\index.php">
                          Return to Form Entry</a></footer>');
             }
             $conn->close();
