@@ -21,7 +21,7 @@
 	} else {
 		// Tests Form variables and adds vehicle to database
 
-		while True:
+		while True{
 			// Verify year
 			if ($v_year < 1886 || $v_year > 2025){
 				echo "Error - Invalid Year Entered";
@@ -56,5 +56,6 @@
 			}
 			echo '<br /><a href="..\index.php">Return to Home Page</a>';
 			$conn->close();
+		}
 	}
 ?>
