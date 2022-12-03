@@ -14,11 +14,9 @@
 	if($conn->connect_error){
 		echo "Connection error: ".mysqli_connect_error();
 	} else {
-		// SQL Query to search for model
+		// SQL Query to search for model, diplays error if necessary
 		$sql = "SELECT car_year, make, model, style, miles, price FROM inventory WHERE model='$v_model'";
 		$result = $conn->query($sql);
-		
-		// Diplay error if necessary
 		if (!$result) {
 			die("Could not successfully run query from $dbname: ".mysqli_error($conn));
 		}
