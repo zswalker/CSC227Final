@@ -30,6 +30,9 @@
 			$error_message = "";
 			
 			// Verify price entries
+			if (empty($price_low) || empty($price_high)){
+				$error_message = "Error - Must enter price.";
+			}
 			if ($price_low < 0){
 				$error_message = "Error - Price can not be nagative.";
 			}
