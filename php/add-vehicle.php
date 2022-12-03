@@ -23,7 +23,11 @@
 		$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
 		VALUES($car_year, $make, $model, $style, $miles, $price, 'Not Sold')";
 		$result = $conn->query($sql);
-		echo "Vehicle Added<br>";
+		if(!$result){
+			echo "Error - Could not add vehicle";
+		} else {
+			echo "Vehicle Added<br>";
+		}
 		echo '<br /><a href="..\index.php">Return to Home Page</a>';
 		$conn->close();
 	}
