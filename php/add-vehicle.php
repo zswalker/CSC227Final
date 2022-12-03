@@ -56,6 +56,7 @@
 			}
 			echo '<br /><a href="..\index.php">Return to Home Page</a>';
 			$conn->close();
+			break;
 		}
 	}
 ?>
