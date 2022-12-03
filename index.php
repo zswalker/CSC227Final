@@ -8,6 +8,30 @@
 </head>
 
 <body>
+<?php
+		$dbhost = getenv("MYSQL_SERVICE_HOST");
+		$dbport = getenv("MYSQL_SERVICE_PORT");
+		$dbuser = getenv("MYSQL_USER");
+		$dbpwd = getenv("MYSQL_PASSWORD");
+		$dbname = getenv("MYSQL_DATABASE");
+
+		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+		if($conn->connect_error){
+			echo "Connection error: ".mysqli_connect_error();
+		} else {
+			$tables = array();
+			$result = mysqli_query($conn, "SHOW TABLES");
+			while($row = mysqli_fetch_row($result)){
+				$tables[] = $row[0];
+			}
+			$sql = "create table if not exists inventory(id serial primary key, car_year YEAR not null, make varchar(30) not null, model varchar(30) not null, car_type varchar(30) not null, miles int(6) not null, price int(8) not null)";
+			$result = $conn->query($sql);
+			if ($result->num_rows > 0) {
+
+			}
+		}
+	
+?>
 <div class="container">
 	<header id="top">
 		<h1>Walker's Used Car Lot</h1>
