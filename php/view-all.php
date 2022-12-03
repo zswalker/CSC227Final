@@ -29,7 +29,7 @@
             if (mysqli_num_rows($result) == 0) {
                 print("No records found");
             } else {
-                print("<h1></h1>");
+                print("<h1>Used Car Lot</h1>");
                 print('<table border = \"1\">');
                 print("<table><thead><tr><th>ID</th><th>Year</th><th>Make</th><th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"); 
                 while($row = mysqli_fetch_assoc($result)) {
@@ -40,7 +40,8 @@
                 print ("<h3>Thank you for using my program.</h3>");
                 print ('<br><footer><a calss="white" href="search-model.html">
                          Return to Form Entry</a></footer>');
-              }	
+            }
+            $conn->close();
         }
 	
     ?>

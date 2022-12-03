@@ -20,10 +20,11 @@
 		echo "Connection error: ".mysqli_connect_error();
 	} else {
 		// Test entries, if valid add vehicle
-		$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price) 
-		VALUES($car_year, $make, $model, $style, $miles, $price)";
+		$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
+		VALUES($car_year, $make, $model, $style, $miles, $price, 'Not Sold')";
 		$result = $conn->query($sql);
 		echo "Vehicle Added<br>";
 		echo '<br /><a href="..\index.php">Return to Home Page</a>';
+		$conn->close();
 	}
 ?>

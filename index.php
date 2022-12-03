@@ -25,9 +25,6 @@
 			 style varchar(30) not null, miles int(6) not null, price int(8) not null, 
 			 sold varchar(8) not null)";
 			$result = mysqli_query($conn, $sql);
-			$sql3 = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
-			VALUES (1990, 'Honda', 'Civic', 'Coupe', 122100, 6500, 'Not Sold')";
-			$result = mysqli_query($conn, $sql3);
 			$conn->close();
 		}
 	
