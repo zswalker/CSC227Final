@@ -27,7 +27,7 @@
                 die("Could not successfully run query from $dbname: ".mysqli_error($conn));
             }
             if (mysqli_num_rows($result) == 0) {
-                print("No records found with Model: $v_model");
+                print("No records found");
             } else {
                 print("<h1></h1>");
                 print("<table border = \"1\">");
