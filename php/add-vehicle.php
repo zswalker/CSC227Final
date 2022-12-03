@@ -1,8 +1,8 @@
 <?php
 	// Function for adding a vehicle to database
-	function insert_vehicle($conn, int $v_year, $v_make, $v_model, $v_type, int $v_miles, int $v_price){
-		$sql = "insert into inventory(car_year, make, model, car_type, miles, price) values
-		(".$v_year.",".$v_make.",".$v_model.",".$v_type.",".$v_miles.",".$v_price.")";
+	function insert_vehicle($conn, int $v_year, $v_make, $v_model, $v_style, int $v_miles, int $v_price){
+		$sql = "insert into inventory(car_year, make, model, style, miles, price) values
+		(".$v_year.",".$v_make.",".$v_model.",".$v_style.",".$v_miles.",".$v_price.")";
 		$result = $conn->query($sql);
 		echo "Vehicle Added<br>";
 	}
