@@ -6,13 +6,7 @@
 	$dbpwd = getenv("MYSQL_PASSWORD");
 	$dbname = getenv("MYSQL_DATABASE");
 
-	// Create variable used in form
-	$v_year = $_POST['year'];
-	$v_make = $_POST['make'];
-	$v_model = $_POST['model'];
-	$v_style = $_POST['style'];
-	$v_miles = $_POST['miles'];
-	$v_price = $_POST['price'];
+	
 
 	// Connect to database and executes main. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
@@ -22,6 +16,13 @@
 		// Tests Form variables and adds vehicle to database
 
 		if(isset($_POST['formSubmit'])){
+			// Create variable used in form
+			$v_year = $_POST['year'];
+			$v_make = $_POST['make'];
+			$v_model = $_POST['model'];
+			$v_style = $_POST['style'];
+			$v_miles = $_POST['miles'];
+			$v_price = $_POST['price'];
 			$error_message = "";
 			
 			// Verify year
