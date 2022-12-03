@@ -17,7 +17,8 @@
 
 		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 		if($conn->connect_error){
-			echo "Connection error: ".mysqli_connect_error();
+			echo "Connection error: ".$conn->connect_error;
+			exit();
 		} else {
 			$sql2 = "DROP TABLE inventory";
 			$result = mysqli_query($conn, $sql2);
@@ -25,6 +26,10 @@
 			 car_year YEAR not null, make varchar(30) not null, model varchar(30) not null,
 			 style varchar(30) not null, miles int(6) not null, price int(8) not null, sold Varchar(8)";
 			$result = mysqli_query($conn, $sql);
+			$sql3 = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
+			VALUES (1990, 'Honda', 'Civic', 'Coupe', 122100, 6500, 'Not Sold')";
+			$result = mysqli_query($conn, $sql3);
+			$conn->close();
 		}
 	
 ?>
