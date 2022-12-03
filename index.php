@@ -66,7 +66,7 @@
 				<tr>
 					<td>
 						<ul>
-							<li> <a href="search-model.php">Search By Year, Make, and Model</a></li>
+							<li> <a href="model\search-model.php">Search By Year, Make, and Model</a></li>
 							<li> <a href="search-budget.php">Search By Budget</a></li>
 							<li> <a href="search-style.php">Search By Style</a></li>
 							<li> <a href="add-vehicle.php">Add Vehicle</a></li>
