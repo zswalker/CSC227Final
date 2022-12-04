@@ -39,7 +39,7 @@
 			} else {
 				// SQL Query to search for model, diplays error if necessary
 				$sql = "SELECT car_year, make, model, style, miles, price 
-						FROM inventory WHERE style='$v_style'";
+						FROM inventory WHERE style='$v_style' && sold='Not Sold'";
 				$result = $conn->query($sql);
 				if (!$result) {
 					die("Could not successfully run query from $dbname: ".mysqli_error($conn));
