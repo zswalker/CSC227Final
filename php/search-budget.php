@@ -31,6 +31,12 @@
 		$error_message = "";
 		
 		// Verify price entries
+		if (empty($price_low)){
+			$price_low = 0;
+		}
+		if (empty($price_high)){
+			$price_high = 10000000;
+		}
 		if ($price_low < 0){
 			$error_message = "Error - Price can not be nagative.";
 		}
@@ -39,12 +45,6 @@
 		}
 		if ($price_low > $price_high){
 			$error_message = "Error - Lower price can not be larger than Higher price.";
-		}
-		if (empty($price_low)){
-			$price_low = 0;
-		}
-		if (empty($price_high)){
-			$price_high = 10000000;
 		}
 
 		// Displays error message if necessary, else searches for price range
