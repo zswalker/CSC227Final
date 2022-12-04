@@ -44,11 +44,11 @@
 			$error_message = "Error - Model not entered";
 		}
 
-		// Displays error message if necessary, else searches for style
+		// Displays error message if necessary, else searches for vehicle
 		if ($error_message != ""){
 			echo "<p>".$error_message."<p>";
 		} else {
-			// SQL Query to search for model, diplays error if necessary
+			// SQL Query to search for year, make, and model, diplays error if necessary
 			$sql = "SELECT car_year, make, model, style, miles, price 
 					FROM inventory WHERE car_year='$v_year' && make='$v_make' && model='$v_model'";
 			$result = $conn->query($sql);
