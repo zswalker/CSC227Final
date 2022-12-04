@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+		Filename: sell-remove.html
+		Author: Zach Walker
+		Purpose: Webpage to sell or remove vehicle in sql database
+	-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add Vehicle</title>
+	<link href="..\style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container">
+	<header>
+		<h1>Sell OR Remove Vehicle</h1>
+	</header>
+	<main>
+	<form action="..\php\sell-vehicle.php" method="post">
+    <fieldset>
+        <legend>Sell Vehicle</legend>
+        <label for="car_id">Vehicle ID:</label>
+        <input type="number" id="car_id" name="car_id" placeholder="1">
+    </fieldset>
+    <br />
+	<button type="submit" id="search">Add Vehicle</button>
+	</form>
+    <br />
+    <br />
+    <form name="formSubmit" action="..\php\remove-vehicle.php" method="post">
+        <fieldset>
+            <legend>Remove Vehicle</legend>
+            <label for="car_id">Vehicle ID:</label>
+            <input type="number" id="car_id" name="car_id" placeholder="2">
+        </fieldset>
+        <br />
+        <button type="submit" id="search">Add Vehicle</button>
+    </form>
+<br />
+<br />
+	<a href="..\index.php">Return to Home Page</a>
+	</main>
+</div>
+</body>
+</html>
