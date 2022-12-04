@@ -45,7 +45,7 @@
                 echo "</table>";
                 echo "<h3>Thank you for using my program.</h3>";
                 echo '<br><footer><a calss="white" href="..\index.php">
-                Return to Form Entry</a></footer>';
+                Return to Homepage</a></footer>';
             }
             $conn->close();
         }
