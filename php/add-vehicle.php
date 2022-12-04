@@ -10,64 +10,63 @@
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 	if($conn->connect_error){
 		echo "Connection error: ".mysqli_connect_error();
-	} else {
-		// Tests Form variables and adds vehicle to database
+		exit();
+	}
+	// Tests Form variables and adds vehicle to database
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		// Create variable used in form
+		$v_year = $_POST['year'];
+		$v_make = $_POST['make'];
+		$v_model = $_POST['model'];
+		$v_style = $_POST['style'];
+		$v_miles = $_POST['miles'];
+		$v_price = $_POST['price'];
+		$error_message = "";
+		
+		// Verify year
+		if ($v_year < 1886 || $v_year > 2025){
+			$error_message = "Error - Invalid Year Entered (Must be 1886 - 2025)";
+		}
 
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			// Create variable used in form
-			$v_year = $_POST['year'];
-			$v_make = $_POST['make'];
-			$v_model = $_POST['model'];
-			$v_style = $_POST['style'];
-			$v_miles = $_POST['miles'];
-			$v_price = $_POST['price'];
-			$error_message = "";
-			
-			// Verify year
-			if ($v_year < 1886 || $v_year > 2025){
-				$error_message = "Error - Invalid Year Entered (Must be 1886 - 2025)";
-			}
+		// Verify make
+		if (empty($v_make)){
+			$error_message = "Error - Make not selected";
+		}
 
-			// Verify make
-			if (empty($v_make)){
-				$error_message = "Error - Make not selected";
-			}
+		// Verify model entry
+		if (empty($v_model)){
+			$error_message = "Error - Model not entered";
+		}
 
-			// Verify model entry
-			if (empty($v_model)){
-				$error_message = "Error - Model not entered";
-			}
+		// Verify Style
+		if (empty($v_style)){
+			$error_message = "Error - Body Style not selected";
+		}
 
-			// Verify Style
-			if (empty($v_style)){
-				$error_message = "Error - Body Style not selected";
-			}
+		// Verify miles
+		if ($v_miles < 0 || $v_miles > 500000){
+			$error_message = "Error - Invalid Miles Entered (Must be 0 - 500,000)";
+		}
 
-			// Verify miles
-			if ($v_miles < 0 || $v_miles > 500000){
-				$error_message = "Error - Invalid Miles Entered (Must be 0 - 500,000)";
-			}
+		// Verify price
+		if ($v_price < 0 || $v_miles > 10000000){
+			$error_message = "Error - Invalid Price Entered (Must be 0 - 10,000,000)";
+		}
 
-			// Verify price
-			if ($v_price < 0 || $v_miles > 10000000){
-				$error_message = "Error - Invalid Price Entered (Must be 0 - 10,000,000)";
-			}
-
-			if ($error_message != ""){
-				echo "<p>".$error_message."<p>";
+		if ($error_message != ""){
+			echo "<p>".$error_message."<p>";
+		} else {
+			// Adds vehicle to database, displays error if necessary
+			$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
+			VALUES($v_year, '$v_make', '$v_model', '$v_style', $v_miles, $v_price, 'Not Sold')";
+			if(!mysqli_query($conn, $sql)){
+				echo "Error - ".$conn->error;
+				exit();
 			} else {
-				// Adds vehicle to database, displays error if necessary
-				$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
-				VALUES($v_year, '$v_make', '$v_model', '$v_style', $v_miles, $v_price, 'Not Sold')";
-				if(!mysqli_query($conn, $sql)){
-					echo "Error - ".$conn->error;
-					exit();
-				} else {
-					echo "Vehicle Successfully Added!<br>";
-				}
-				echo '<br /><a href="..\index.php">Return to Home Page</a>';
-				$conn->close();
+				echo "Vehicle Successfully Added!<br>";
 			}
+			echo '<br /><a href="..\index.php">Return to Home Page</a>';
+			$conn->close();
 		}
 	}
 ?>
