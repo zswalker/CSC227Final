@@ -29,7 +29,17 @@
 		$v_model = $_POST['model'];
 		$error_message = "";
 
-		// Verify Style
+		// Verify year
+		if ($v_year < 1886 || $v_year > 2025){
+			$error_message = "Error - Invalid Year Entered (Must be 1886 - 2025)";
+		}
+
+		// Verify make
+		if (empty($v_make)){
+			$error_message = "Error - Make not selected";
+		}
+
+		// Verify model entry
 		if (empty($v_model)){
 			$error_message = "Error - Model not entered";
 		}
