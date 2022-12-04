@@ -63,6 +63,7 @@
 			$error_message = "Error - Invalid Price Entered (Must be 0 - 10,000,000)";
 		}
 
+		// Display error message if necessary, else adds vehicle
 		if ($error_message != ""){
 			echo "<p>".$error_message."<p>";
 		} else {
