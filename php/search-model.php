@@ -26,6 +26,8 @@
 	// Tests Form variables and adds vehicle to database
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// Create variables for testing
+		$v_year = $_POST['year'];
+		$v_make = $_POST['make'];
 		$v_model = $_POST['model'];
 		$error_message = "";
 
