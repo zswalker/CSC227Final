@@ -33,8 +33,7 @@
 			$error_message = "Error - Vehicle ID not entered";
 		}
         
-        // Display error message if necessary, 
-        // else sets vehicle to sold
+        // Display error message if necessary, else sets vehicle to sold
 		if ($error_message != ""){
 			echo "<h3>".$error_message."<h3>";
 		} else {
