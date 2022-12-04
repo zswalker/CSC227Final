@@ -38,7 +38,8 @@
 				echo "<p>".$error_message."<p>";
 			} else {
 				// SQL Query to search for model, diplays error if necessary
-				$sql = "SELECT car_year, make, model, style, miles, price FROM inventory WHERE style='$v_style'";
+				$sql = "SELECT car_year, make, model, style, miles, price 
+						FROM inventory WHERE style='$v_style'";
 				$result = $conn->query($sql);
 				if (!$result) {
 					die("Could not successfully run query from $dbname: ".mysqli_error($conn));
@@ -55,7 +56,8 @@
 					while($row = mysqli_fetch_assoc($result)) {
 						echo("<tr><td>".$row["car_year"]."</td>
 						<td>".$row["make"]."</td><td>".$row["model"]."</td>
-						<td>".$row["style"]."</td><td>".$row["miles"]."</td><td>"
+						<td>".$row["style"]."</td><td>"
+						.number_format($row["miles"], 0, ",")."</td><td>"
 						.number_format($row["price"], 0, ",")."</td></tr>");
 					}
 					echo("</table>");
