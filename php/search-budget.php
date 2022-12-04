@@ -70,7 +70,8 @@
 				while($row = mysqli_fetch_assoc($result)) {
 					echo("<tr><td>".$row["car_year"]."</td>
 					<td>".$row["make"]."</td><td>".$row["model"]."</td>
-					<td>".$row["style"]."</td><td>".$row["miles"]."</td><td>"
+					<td>".$row["style"]."</td><td>"
+					.number_format($row["miles"], 0, ",")."</td><td>"
 					.number_format($row["price"], 0, ",")."</td></tr>");
 				}
 				echo("</table>");
