@@ -65,7 +65,7 @@
 					<td>
 						<ul>
 							<li><a href="html\add-vehicle.html">Add Vehicle</a></li>
-							<li><a href="html\sell-remove-vehicle.html">Sell/Remove Vehicle</a></li>
+							<li><a href="html\sell-remove.html">Sell/Remove Vehicle</a></li>
 						</ul>
 					</td>
 				</tr>
