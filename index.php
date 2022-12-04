@@ -47,18 +47,26 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Search/Add Vehicle</th>
+						<th>Search</th>
+						<th>Modify</th>
 					</tr>
 				</thead>
 				<tbody>
 				<tr>
 					<td>
 						<ul>
-							<li> <a href="html\search-model.html">Search By Year, Make, and Model</a></li>
-							<li> <a href="html\search-budget.html">Search By Budget</a></li>
-							<li> <a href="html\search-style.html">Search By Style</a></li>
-							<li> <a href="html\add-vehicle.html">Add Vehicle</a></li>
-							<li> <a href="php\view-all.php">View All Vehicles</a></li>
+							<li><a href="html\search-model.html">Search By Year/Make/Model</a></li>
+							<li><a href="html\search-budget.html">Search By Price</a></li>
+							<li><a href="html\search-style.html">Search By Style</a></li>
+							<br>
+							<li><a href="php\view-inventory.php">View All Vehicles</a></li>
+						</ul>
+					</td>
+					<td>
+						<ul>
+							<li><a href="html\add-vehicle.html">Add Vehicle</a></li>
+							<li><a href="html\sell-vehicle.html">Sell Vehicle</a></li>
+							<li><a href="html\remove-vehicle.html">Remove Vehicle</a></li>
 						</ul>
 					</td>
 				</tr>
