@@ -52,7 +52,8 @@
 		} else {
 			// SQL Query to search for year, make, and model, diplays error if necessary
 			$sql = "SELECT car_year, make, model, style, miles, price 
-					FROM inventory WHERE car_year='$v_year' && make='$v_make' && model='$v_model'";
+					FROM inventory 
+					WHERE car_year='$v_year' && make='$v_make' && model='$v_model' && sold='Not Sold'";
 			$result = $conn->query($sql);
 			if (!$result) {
 				die("Could not successfully run query from $dbname: ".mysqli_error($conn));
@@ -60,7 +61,7 @@
 	
 			// Displays message if no results found
 			if (mysqli_num_rows($result) == 0) {
-				echo "No records found";
+				echo $v_year." ".$v_make." ".$v_model." Not in inventory";
 			} else {
 				// else: Prints table of vehicles found
 				echo "<h1>Vehicles Found</h1>";
