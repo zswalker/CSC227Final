@@ -61,7 +61,7 @@
 	
 			// Displays message if no results found
 			if (mysqli_num_rows($result) == 0) {
-				echo $v_year." ".$v_make." ".$v_model." Not in inventory";
+				echo "'".$v_year." ".$v_make." ".$v_model."' not in inventory";
 			} else {
 				// else: Prints table of vehicles found
 				echo "<h1>Vehicles Found</h1>";

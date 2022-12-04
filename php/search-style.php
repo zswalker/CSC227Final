@@ -47,7 +47,7 @@
 		
 				// Displays message if no results found
 				if (mysqli_num_rows($result) == 0) {
-					echo "No records found";
+					echo "No vehicles found with '".$v_style."' body style.";
 				} else {
 					// else: Prints table of vehicles found
 					echo "<h1>Vehicles Found</h1>";
