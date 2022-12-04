@@ -33,6 +33,7 @@
 			$error_message = "Error - Vehicle ID not entered";
 		}
 
+        // Display error message if necessary, else remove vehicle
 		if ($error_message != ""){
 			echo "<h3>".$error_message."<h3>";
 		} else {
