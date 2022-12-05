@@ -10,7 +10,7 @@
 <body>
 	<?php
         // Create header and back button
-        echo '<a id="back" href="..\index.php"><-Back</a><br />';
+        echo '<a id="back" href="..\index.php">&lt;-Back</a><br />';
         echo "<header id='top'><h1>Used Car Lot</h1></header>";
 
         // Create variables for connection
