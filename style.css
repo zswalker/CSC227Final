@@ -29,7 +29,7 @@ fieldset, legend {
     font-family: monospace, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 30px;
-    padding: 7px;
+    padding-bottom: .5em;
 }
 #tools img{
     float: left;
