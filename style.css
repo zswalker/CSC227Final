@@ -76,5 +76,7 @@ fieldset {
     padding-bottom: -5px;
 }
 h3 {
+    font-family: monospace, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
     color: crimson;
 }
