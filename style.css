@@ -25,10 +25,11 @@ ul {
 li {
     padding-bottom: 5px;
 }
-legend {
+legend, fieldset {
     font-family: monospace, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 30px;
+    padding: 7px;
 }
 #tools img{
     float: left;
@@ -45,45 +46,10 @@ td {
     color: aliceblue;
     text-align: center;
 }
-fieldset {
-    width: auto;
-}
 label {
     padding-bottom: 12px;
     color: azure;
 }
-.search {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 75px;
-    height: 20px;
-    line-height: 20px;
-    font-size: 18px;
-    font-family: sans-serif;
-    text-decoration: none;
-    color: #333;
-    border: 2px solid #333;
-    letter-spacing: 2px;
-    text-align: center;
-    position: relative;
-    transition: all .35s;
-}
-.search:after{
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #0CC;
-    transition: all .35s;
-}
-.search:hover {
-    color: #0CC;
-}
-.search:hover:after{
-    width: 100%;
+button {
+    padding: 10px;
 }
