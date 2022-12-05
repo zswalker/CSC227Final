@@ -35,17 +35,17 @@
 
 		// Verify make
 		if (empty($v_make)){
-			$error_message = "<p>Error - Make not selected</p>";
+			$error_message = "<h3>Error - Make not selected</h3>";
 		}
 
 		// Verify model entry
 		if (empty($v_model)){
-			$error_message = "<p>Error - Model not entered</p>";
+			$error_message = "<h3>Error - Model not entered</h3>";
 		}
 
 		// Displays error message if necessary, else searches for vehicle
 		if ($error_message != ""){
-			echo "<p>".$error_message."</p>";
+			echo "<h3>".$error_message."</h3>";
 		} else {
 			// SQL Query to search for year, make, and model, diplays error if necessary
 			$sql = "SELECT car_year, make, model, style, miles, price 
@@ -53,12 +53,12 @@
 					WHERE make='$v_make' && model='$v_model' && sold='Not Sold'";
 			$result = $conn->query($sql);
 			if (!$result) {
-				die("<p>Could not successfully run query from $dbname: ".mysqli_error($conn)."</p>");
+				die("<h3>Could not successfully run query from $dbname: ".mysqli_error($conn)."</h3>");
 			}
 	
 			// Displays message if no results found
 			if (mysqli_num_rows($result) == 0) {
-				echo "<p>Vehicle with ".$v_make." make and ".$v_model." model not in inventory</p>";
+				echo "<h3>Vehicle with ".$v_make." make and ".$v_model." model not in inventory</h3>";
 			} else {
 				// else: Prints table of vehicles found
 				echo "<h1>Vehicles Found</h1>";
@@ -72,7 +72,7 @@
 					.number_format($row["price"], 0, ",")."</td></tr>";
 				}
 				echo "</table>";
-				echo "<h3>Thank you for using my program.</h3>";
+				echo "<p>Thank you for using my program.</p>";
 				echo '<br><footer><a calss="white" href="..\index.php">
 							Return to Form Entry</a></footer>';
 			}

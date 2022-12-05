@@ -22,7 +22,7 @@
 	// Connect to database and executes main. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 	if($conn->connect_error){
-		echo "<p>Connection error: ".mysqli_connect_error()."</p>";
+		echo "<h3>Connection error: ".mysqli_connect_error()."</h3>";
 		exit();
 	}
 	
@@ -41,34 +41,34 @@
 			$price_high = 10000000;
 		}
 		if ($price_low < 0){
-			$error_message = "<p>Error - Price can not be nagative</p>";
+			$error_message = "<h3>Error - Price can not be nagative</h3>";
 		}
 		if ($price_high < 0){
-			$error_message = "<p>Error - Price can not be nagative</p>";
+			$error_message = "<h3>Error - Price can not be nagative</h3>";
 		}
 		if ($price_low > $price_high){
-			$error_message = "<p>Error - Lower price can not be larger than Higher price</p>";
+			$error_message = "<h3>Error - Lower price can not be larger than Higher price</h3>";
 		}
 
 		// Displays error message if necessary, else searches for price range
 		if ($error_message != ""){
-			echo "<p>".$error_message."</p>";
+			echo "<h3>".$error_message."</h3>";
 		} else {
 			// SQL Query to search for model, diplays error if necessary
 			$sql = "SELECT car_year, make, model, style, miles, price FROM inventory 
 					WHERE price>'$price_low' && price<'$price_high' && sold='Not Sold'";
 			$result = $conn->query($sql);
 			if (!$result) {
-				die("Could not successfully run query from $dbname: ".mysqli_error($conn));
+				die("<h3>Could not successfully run query from $dbname: ".mysqli_error($conn)."</h3>");
 			}
 	
 			// Displays message if no results found
 			if (mysqli_num_rows($result) == 0) {
 				if ($price_low == 0){
-					echo "<p>No vehicles less than $".number_format($price_high, 0, ",")."</p>";
+					echo "<h3>No vehicles less than $".number_format($price_high, 0, ",")."</h3>";
 				} else {
-					echo "<p>No vehicles found between $".number_format($price_low, 0, ",").
-						" and $".number_format($price_high, 0, ",")."</p>";
+					echo "<h3>No vehicles found between $".number_format($price_low, 0, ",").
+						" and $".number_format($price_high, 0, ",")."</h3>";
 				}
 			} else {
 				// else: Prints table of vehicles found
@@ -89,7 +89,7 @@
 						.number_format($row["price"], 0, ",")."</td></tr>";
 				}
 				echo "</table>";
-				echo "<h3>Thank you for using my program.</h3>";
+				echo "<p>Thank you for using my program.</p>";
 				echo '<br><footer><a calss="white" href="..\index.php">
 					Return to Form Entry</a></footer>';
 			}

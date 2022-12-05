@@ -23,13 +23,13 @@
 		// Connect to database and executes main. Prints error if unsuccessful.
         $conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
         if($conn->connect_error){
-            echo "<p>Connection error: ".mysqli_connect_error()."</p>";
+            echo "<h3>Connection error: ".mysqli_connect_error()."</h3>";
         } else {
             // SQL Query to search for model, diplays error if necessary
             $sql = "SELECT * FROM inventory WHERE sold='Not Sold'";
             $result = $conn->query($sql);
             if (!$result) {
-                die("<p>Could not successfully run query from $dbname: ".mysqli_error($conn)."</p>");
+                die("<h3>Could not successfully run query from $dbname: ".mysqli_error($conn)."</h3>");
             }
 
             // Displays message if no results found
@@ -46,7 +46,7 @@
                     .number_format($row["price"], 0, ",")."</td></tr>");
                 }
                 echo "</table>";
-                echo "<h3>Thank you for using my program - <a href='#top'>return to top</a></h3>";
+                echo "<p>Thank you for using my program - <a href='#top'>return to top</a></p>";
             }
             echo '<br><footer><a calss="white" href="..\index.php">
                 Return to Homepage</a></footer>';

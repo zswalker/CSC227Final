@@ -17,6 +17,11 @@ h3 {
     font-weight: bold;
     color: crimson;
 }
+h4 {
+    font-family: monospace, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: chartreuse;
+}
 p {
     font-family: monospace, 'Trebuchet MS', sans-serif;
     font-size: larger;

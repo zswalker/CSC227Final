@@ -22,7 +22,7 @@
 	// Connect to database and executes main. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 	if($conn->connect_error){
-		echo "Connection error: ".mysqli_connect_error();
+		echo "<h3>Connection error: ".mysqli_connect_error()."</h3>";
 		exit();
 	}
 	// Tests Form variables and adds vehicle to database
@@ -33,19 +33,19 @@
 
 		// Verify vehicle ID
 		if (empty($v_id)){
-			$error_message = "Error - Vehicle ID not entered";
+			$error_message = "<h3>Error - Vehicle ID not entered</h3>";
 		}
 
         // Display error message if necessary, else remove vehicle
 		if ($error_message != ""){
-			echo "<h3>".$error_message."<h3>";
+			echo "<h3>".$error_message."</h3>";
 		} else {
             // Removes vehicle from database, displays error if necessary
 			$sql = "DELETE FROM inventory WHERE id='$v_id'";
 			if(!mysqli_query($conn, $sql)){
-				echo "Error - ".$conn->error;
+				echo "<h3>Error - ".$conn->error."</h3>";
 			} else {
-				echo "Vehicle Successfully Removed!<br>";
+				echo "<h3>Vehicle Successfully Removed!</h3>";
 			}
 			echo '<br /><a href="..\index.php">Return to Home Page</a>';
 			$conn->close();

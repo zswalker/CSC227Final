@@ -10,7 +10,7 @@
 <body>
 <?php
 	// Create a back button
-	echo '<a href="..\html\add-vehicle.html"><-Back</a><br />';
+	echo '<a href="..\html\add-vehicle.html">&lt;-Back</a><br />';
 
 	// Create variables for connection
 	$dbhost = getenv("MYSQL_SERVICE_HOST");
@@ -22,7 +22,7 @@
 	// Connect to database and executes main. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 	if($conn->connect_error){
-		echo "Connection error: ".mysqli_connect_error();
+		echo "<h3>Connection error: ".mysqli_connect_error()."</h3>";
 		exit();
 	}
 	// Tests Form variables and adds vehicle to database
@@ -38,37 +38,37 @@
 		
 		// Verify year
 		if ($v_year < 1886 || $v_year > 2025){
-			$error_message = "Error - Invalid Year Entered (Must be 1886 - 2025)";
+			$error_message = "<h3>Error - Invalid Year Entered (Must be 1886 - 2025)</h3>";
 		}
 
 		// Verify make
 		if (empty($v_make)){
-			$error_message = "Error - Make not selected";
+			$error_message = "<h3>Error - Make not selected</h3>";
 		}
 
 		// Verify model entry
 		if (empty($v_model)){
-			$error_message = "Error - Model not entered";
+			$error_message = "<h3>Error - Model not entered</h3>";
 		}
 
 		// Verify Style
 		if (empty($v_style)){
-			$error_message = "Error - Body Style not selected";
+			$error_message = "<h3>Error - Body Style not selected</h3>";
 		}
 
 		// Verify miles
 		if ($v_miles < 0 || $v_miles > 500000){
-			$error_message = "Error - Invalid Miles Entered (Must be 0 - 500,000)";
+			$error_message = "<h3>Error - Invalid Miles Entered (Must be 0 - 500,000)</h3>";
 		}
 
 		// Verify price
 		if ($v_price < 0 || $v_miles > 10000000){
-			$error_message = "Error - Invalid Price Entered (Must be 0 - 10,000,000)";
+			$error_message = "<h3>Error - Invalid Price Entered (Must be 0 - 10,000,000)</h3>";
 		}
 
 		// Display error message if necessary, else adds vehicle
 		if ($error_message != ""){
-			echo "<p>".$error_message."<p>";
+			echo "<h3>".$error_message."</h3>";
 		} else {
 			// Adds vehicle to database, displays error if necessary
 			$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
@@ -76,7 +76,7 @@
 			if(!mysqli_query($conn, $sql)){
 				echo "Error - ".$conn->error;
 			} else {
-				echo "Vehicle Successfully Added!<br>";
+				echo "<h4>Vehicle Successfully Added!</h4><br>";
 			}
 			echo '<br /><a href="..\index.php">Return to Home Page</a>';
 			$conn->close();

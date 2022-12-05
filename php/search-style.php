@@ -33,24 +33,24 @@
 
 			// Verify Style
 			if (empty($v_style)){
-				$error_message = "<p>Error - Body Style not selected</p>";
+				$error_message = "<h3>Error - Body Style not selected</h3>";
 			}
 
 			// Displays error message if necessary, else searches for style
 			if ($error_message != ""){
-				echo "<p>".$error_message."</p>";
+				echo "<h3>".$error_message."</h3>";
 			} else {
 				// SQL Query to search for model, diplays error if necessary
 				$sql = "SELECT car_year, make, model, style, miles, price 
 						FROM inventory WHERE style='$v_style' && sold='Not Sold'";
 				$result = $conn->query($sql);
 				if (!$result) {
-					die("<p>Could not successfully run query from $dbname: ".mysqli_error($conn)."</p>");
+					die("<h3>Could not successfully run query from $dbname: ".mysqli_error($conn)."</h3>");
 				}
 		
 				// Displays message if no results found
 				if (mysqli_num_rows($result) == 0) {
-					echo "<p>No vehicles found with '".$v_style."' body style</p>";
+					echo "<h3>No vehicles found with '".$v_style."' body style</h3>";
 				} else {
 					// else: Prints table of vehicles found
 					echo "<h1>Vehicles Found</h1>";
@@ -64,7 +64,7 @@
 						.number_format($row["price"], 0, ",")."</td></tr>";
 					}
 					echo "</table>";
-					echo "<h3>Thank you for using my program.</h3>";
+					echo "<p>Thank you for using my program.</p>";
 					echo '<br><footer><a calss="white" href="..\index.php">
 								Return to Form Entry</a></footer>';
 				}
