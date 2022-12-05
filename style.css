@@ -29,8 +29,6 @@ legend {
     font-family: monospace, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 30px;
-    padding: 10px;
-    color: azure;
 }
 #tools img{
     float: left;
@@ -49,4 +47,8 @@ td {
 }
 fieldset {
     width: auto;
+}
+label {
+    padding-bottom: 6px;
+    color: azure;
 }
