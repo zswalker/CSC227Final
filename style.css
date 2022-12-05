@@ -52,7 +52,7 @@ label {
     padding-bottom: 6px;
     color: azure;
 }
-#search {
+.search {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -71,7 +71,7 @@ label {
     position: relative;
     transition: all .35s;
 }
-#search:after{
+.search:after{
     position: absolute;
     content: "";
     top: 0;
@@ -81,9 +81,9 @@ label {
     background: #0CC;
     transition: all .35s;
 }
-#search:hover {
+.search:hover {
     color: #0CC;
 }
-#search:hover:after{
+.search:hover:after{
     width: 100%;
-  }
+}
