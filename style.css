@@ -29,6 +29,7 @@ legend {
     font-family: monospace, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 30px;
+    padding-right: 7px;
 }
 #tools img{
     float: left;
