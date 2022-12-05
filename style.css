@@ -60,6 +60,6 @@ label {
 button {
     padding: 10px;
 }
-input {
+input, select {
     border-color: #cff;
 }
