@@ -25,7 +25,7 @@ ul {
 li {
     padding-bottom: 5px;
 }
-legend, fieldset {
+fieldset, legend {
     font-family: monospace, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 30px;
