@@ -8,13 +8,18 @@ h1 {
     color: #B266FF;
     text-align: center;
 }
-p {
-    font-family: monospace, 'Trebuchet MS', sans-serif;
-    font-size: larger;
-}
 th, h2 {
     font-family: monospace, 'Trebuchet MS', sans-serif;
     font-size: xx-large;
+}
+h3 {
+    font-family: monospace, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: crimson;
+}
+p {
+    font-family: monospace, 'Trebuchet MS', sans-serif;
+    font-size: larger;
 }
 a {
     color: white;
@@ -37,11 +42,6 @@ fieldset > legend {
     font-size: 30px;
     font-family: monospace, 'Trebuchet MS', sans-serif;
     padding: 1rem;
-}
-#tools img{
-    float: left;
-    padding-left: 5px;
-    padding-right: 25px;
 }
 table {
     border-color: aqua;
@@ -75,8 +75,8 @@ fieldset {
 #back {
     padding-bottom: -5px;
 }
-h3 {
-    font-family: monospace, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    color: crimson;
+#tools img{
+    float: left;
+    padding-left: 5px;
+    padding-right: 25px;
 }
