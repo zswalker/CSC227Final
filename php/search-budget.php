@@ -62,14 +62,16 @@
 			// Displays message if no results found
 			if (mysqli_num_rows($result) == 0) {
 				if ($price_low == 0){
-					echo "No vehicles less than $".number_format($price_high, 0, ",");
+					echo "<p>No vehicles less than $".number_format($price_high, 0, ",")."</p>";
 				} else {
-					echo "No vehicles found between $".number_format($price_low, 0, ",").
-						"$".number_format($price_high, 0, ",");
+					echo "<p>No vehicles found between $".number_format($price_low, 0, ",").
+						" and $".number_format($price_high, 0, ",")."</p>";
 				}
 			} else {
 				// else: Prints table of vehicles found
 				echo "<h1>Vehicles Found</h1>";
+				echo "<p>Vehicles between $".number_format($price_low, 0, ",").
+					" and ".number_format($price_high, 0, ",")."</p>";
 				echo "<table border='1'><thead><tr><th>Year</th><th>Make</th>
 					<th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"; 
 				while($row = mysqli_fetch_assoc($result)) {
