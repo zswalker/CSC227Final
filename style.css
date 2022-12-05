@@ -58,6 +58,9 @@ label {
     color: azure;
 }
 button {
+    background-color: aquamarine;
+    font-family: monospace, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
     padding: 10px;
 }
 input, select {
