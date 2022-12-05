@@ -41,6 +41,7 @@
 				<li><a href="html\search-model.html">Search By Year/Make/Model</a></li>
 				<li><a href="html\search-budget.html">Search By Price</a></li>
 				<li><a href="html\search-style.html">Search By Style</a></li>
+				<br />
 				<li><a href="php\view-inventory.php">View All Vehicles</a></li>
 			</ul>
 			<br />
