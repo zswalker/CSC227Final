@@ -29,4 +29,8 @@ legend {
 }
 #tools img{
     float: left;
+    padding-right: 20px;
+}
+#about {
+    float: bottom;
 }
