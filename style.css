@@ -60,3 +60,6 @@ label {
 button {
     padding: 10px;
 }
+input {
+    border-color: #cff;
+}
