@@ -45,3 +45,6 @@ td {
     color: aliceblue;
     text-align: center;
 }
+fieldset {
+    width: auto;
+}
