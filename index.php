@@ -43,12 +43,13 @@
 				<li><a href="html\search-style.html">Search By Style</a></li>
 				<li><a href="php\view-inventory.php">View All Vehicles</a></li>
 			</ul>
-			<br>
+			<br />
 			<h2>Modify</h2>
 			<ul>
 				<li><a href="html\add-vehicle.html">Add Vehicle</a></li>
 				<li><a href="html\sell-remove.html">Sell/Remove Vehicle</a></li>
 			</ul>
+			<br />
 			
 		</section>
 		<div id="about">				
