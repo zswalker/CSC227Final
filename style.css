@@ -21,6 +21,7 @@ a {
 }
 ul {
     list-style-type: circle;
+    padding-bottom: 5px;
 }
 legend {
     font-family: monospace, 'Trebuchet MS', sans-serif;
