@@ -11,3 +11,10 @@ p {
     font-family: monospace, 'Trebuchet MS', sans-serif;
     font-size: larger;
 }
+th, h2 {
+    font-family: monospace, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+}
+a {
+    color: white;
+}
