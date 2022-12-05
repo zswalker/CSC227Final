@@ -9,7 +9,8 @@
 
 <body>
 	<?php
-        // Create a back button
+        // Create header and back button
+        echo "<header id='top'><h1>Used Car Lot</h1></header>";
 	    echo '<a href="..\index.php"><-Back</a><br />';
 
         // Create variables for connection
@@ -36,7 +37,6 @@
                 echo "<h3>No records found</h3>";
             } else {
                 // else: Prints table of vehicles found
-                echo "<h1>Used Car Lot</h1>";
                 echo "<table border='1'><thead><tr><th>ID</th><th>Year</th><th>Make</th>
                 <th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"; 
                 while($row = mysqli_fetch_assoc($result)) {
@@ -46,7 +46,7 @@
                     .number_format($row["price"], 0, ",")."</td></tr>");
                 }
                 echo "</table>";
-                echo "<h3>Thank you for using my program.</h3>";
+                echo "<h3>Thank you for using my program <a href='#top'><top></a></h3>";
             }
             echo '<br><footer><a calss="white" href="..\index.php">
                 Return to Homepage</a></footer>';
