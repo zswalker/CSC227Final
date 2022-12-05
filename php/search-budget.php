@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Car Lot Search</title>
-	<link href="style.css" type="text/css" rel="stylesheet" />
+	<link href="..\style.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
@@ -70,8 +70,12 @@
 			} else {
 				// else: Prints table of vehicles found
 				echo "<h1>Vehicles Found</h1>";
-				echo "<p>Vehicles between $".number_format($price_low, 0, ",").
-					" and ".number_format($price_high, 0, ",")."</p>";
+				if ($price_low == 0){
+					echo "<p>Vehicles below $".number_format($price_high, 0, ",")."</p>";
+				} else {
+					echo "<p>Vehicles between $".number_format($price_low, 0, ",").
+						" and ".number_format($price_high, 0, ",")."</p>";
+				}
 				echo "<table border='1'><thead><tr><th>Year</th><th>Make</th>
 					<th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"; 
 				while($row = mysqli_fetch_assoc($result)) {
