@@ -10,7 +10,7 @@
 <body>
 <?php
 	// Create a back button
-	echo '<a href="..\search-model.html"><-Back</a><br />';
+	echo '<a href="..\html\search-model.html"><-Back</a><br />';
 
 	// Create variables for connection
 	$dbhost = getenv("MYSQL_SERVICE_HOST");
