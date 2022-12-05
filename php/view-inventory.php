@@ -46,7 +46,7 @@
                     .number_format($row["price"], 0, ",")."</td></tr>");
                 }
                 echo "</table>";
-                echo "<h3>Thank you for using my program <a href='#top'>Return to top</a></h3>";
+                echo "<h3>Thank you for using my program - <a href='#top'>return to top</a></h3>";
             }
             echo '<br><footer><a calss="white" href="..\index.php">
                 Return to Homepage</a></footer>';
