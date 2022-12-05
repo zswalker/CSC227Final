@@ -23,6 +23,18 @@
         <legend>Vehicle Information</legend>
         <label for="year">Year:</label>
         <input type="number" id="year" name="year" placeholder="EX: 1990">
+        <label>Body Style:</label>
+			<select name="style">
+                <option value="">Select</option>
+                <option value="Convertible">Convertible</option>
+                <option value="Coupe">Coupe</option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="Sedan">Sedan</option>
+                <option value="SUV">SUV</option>
+                <option value="Truck">Truck</option>
+                <option value="Van">Van</option>
+			</select>
+        <br />
         <label>Select Vehicle Make:</label>
 			<select name="make">
                 <option value="">Select</option>
@@ -47,22 +59,11 @@
                 <option value="Nissan">Nissan</option>
                 <option value="Toyota">Toyota</option>
 			</select>
-        <label for="model">Model:</label>
-        <input type="text" id="model" name="model" placeholder="EX: Civic">
-        <br>
-        <label>Select a Body Style:</label>
-			<select name="style">
-                <option value="">Select</option>
-                <option value="Convertible">Convertible</option>
-                <option value="Coupe">Coupe</option>
-                <option value="Hatchback">Hatchback</option>
-                <option value="Sedan">Sedan</option>
-                <option value="SUV">SUV</option>
-                <option value="Truck">Truck</option>
-                <option value="Van">Van</option>
-			</select>
         <label for="miles">Miles:</label>
         <input type="number" id="miles" name="miles" step="100" placeholder="EX: 10000">
+        <br />
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" placeholder="EX: Civic">
         <label for="price">Price: $</label>
         <input type="number" id="price" name="price" step="100" placeholder="EX: 13500">
     </fieldset>
