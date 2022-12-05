@@ -22,18 +22,18 @@
 		// Connect to database and executes main. Prints error if unsuccessful.
         $conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
         if($conn->connect_error){
-            echo "Connection error: ".mysqli_connect_error();
+            echo "<p>Connection error: ".mysqli_connect_error()."</p>";
         } else {
             // SQL Query to search for model, diplays error if necessary
             $sql = "SELECT * FROM inventory WHERE sold='Not Sold'";
             $result = $conn->query($sql);
             if (!$result) {
-                die("Could not successfully run query from $dbname: ".mysqli_error($conn));
+                die("<p>Could not successfully run query from $dbname: ".mysqli_error($conn)."</p>");
             }
 
             // Displays message if no results found
             if (mysqli_num_rows($result) == 0) {
-                echo "No records found";
+                echo "<h3>No records found</h3>";
             } else {
                 // else: Prints table of vehicles found
                 echo "<h1>Used Car Lot</h1>";
@@ -47,9 +47,9 @@
                 }
                 echo "</table>";
                 echo "<h3>Thank you for using my program.</h3>";
-                echo '<br><footer><a calss="white" href="..\index.php">
-                Return to Homepage</a></footer>';
             }
+            echo '<br><footer><a calss="white" href="..\index.php">
+                Return to Homepage</a></footer>';
             $conn->close();
         }
 	

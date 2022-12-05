@@ -22,7 +22,7 @@
 	// Connect to database and executes main. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 	if($conn->connect_error){
-		echo "Connection error: ".mysqli_connect_error();
+		echo "<p>Connection error: ".mysqli_connect_error()."</p>";
 		exit();
 	} 
 	
@@ -35,17 +35,17 @@
 
 		// Verify make
 		if (empty($v_make)){
-			$error_message = "Error - Make not selected";
+			$error_message = "<p>Error - Make not selected</p>";
 		}
 
 		// Verify model entry
 		if (empty($v_model)){
-			$error_message = "Error - Model not entered";
+			$error_message = "<p>Error - Model not entered</p>";
 		}
 
 		// Displays error message if necessary, else searches for vehicle
 		if ($error_message != ""){
-			echo "<p>".$error_message."<p>";
+			echo "<p>".$error_message."</p>";
 		} else {
 			// SQL Query to search for year, make, and model, diplays error if necessary
 			$sql = "SELECT car_year, make, model, style, miles, price 
@@ -53,7 +53,7 @@
 					WHERE make='$v_make' && model='$v_model' && sold='Not Sold'";
 			$result = $conn->query($sql);
 			if (!$result) {
-				die("Could not successfully run query from $dbname: ".mysqli_error($conn));
+				die("<p>Could not successfully run query from $dbname: ".mysqli_error($conn)."</p>");
 			}
 	
 			// Displays message if no results found
@@ -65,16 +65,16 @@
 				echo "<table border='1'><thead><tr><th>Year</th><th>Make</th>
 				<th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"; 
 				while($row = mysqli_fetch_assoc($result)) {
-					echo("<tr><td>".$row["car_year"]."</td>
+					echo "<tr><td>".$row["car_year"]."</td>
 					<td>".$row["make"]."</td><td>".$row["model"]."</td>
 					<td>".$row["style"]."</td><td>"
 					.number_format($row["miles"], 0, ",")."</td><td>"
-					.number_format($row["price"], 0, ",")."</td></tr>");
+					.number_format($row["price"], 0, ",")."</td></tr>";
 				}
-				echo("</table>");
-				echo("<h3>Thank you for using my program.</h3>");
-				echo('<br><footer><a calss="white" href="..\index.php">
-							Return to Form Entry</a></footer>');
+				echo "</table>";
+				echo "<h3>Thank you for using my program.</h3>";
+				echo '<br><footer><a calss="white" href="..\index.php">
+							Return to Form Entry</a></footer>';
 			}
 			$conn->close();
 		}

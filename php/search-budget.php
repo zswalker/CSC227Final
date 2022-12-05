@@ -22,7 +22,7 @@
 	// Connect to database and executes main. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 	if($conn->connect_error){
-		echo "Connection error: ".mysqli_connect_error();
+		echo "<p>Connection error: ".mysqli_connect_error()."</p>";
 		exit();
 	}
 	
@@ -41,18 +41,18 @@
 			$price_high = 10000000;
 		}
 		if ($price_low < 0){
-			$error_message = "Error - Price can not be nagative.";
+			$error_message = "<p>Error - Price can not be nagative</p>";
 		}
 		if ($price_high < 0){
-			$error_message = "Error - Price can not be nagative.";
+			$error_message = "<p>Error - Price can not be nagative</p>";
 		}
 		if ($price_low > $price_high){
-			$error_message = "Error - Lower price can not be larger than Higher price.";
+			$error_message = "<p>Error - Lower price can not be larger than Higher price</p>";
 		}
 
 		// Displays error message if necessary, else searches for price range
 		if ($error_message != ""){
-			echo "<p>".$error_message."<p>";
+			echo "<p>".$error_message."</p>";
 		} else {
 			// SQL Query to search for model, diplays error if necessary
 			$sql = "SELECT car_year, make, model, style, miles, price FROM inventory 
