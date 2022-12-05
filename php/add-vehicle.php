@@ -9,6 +9,9 @@
 
 <body>
 <?php
+	// Create a back button
+	echo '<a href="..\add-vehicle.html"><-Back</a><br />';
+
 	// Create variables for connection
 	$dbhost = getenv("MYSQL_SERVICE_HOST");
 	$dbport = getenv("MYSQL_SERVICE_PORT");
