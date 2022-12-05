@@ -31,3 +31,9 @@ legend {
     float: left;
     padding-right: 25px;
 }
+table {
+    border-color: aqua;
+}
+td {
+    color: aliceblue;
+}
