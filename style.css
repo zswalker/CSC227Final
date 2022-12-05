@@ -1,7 +1,9 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background-color: #004C99;
     padding: 4px;
-    box-sizing: border-box;
 }
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -26,7 +28,7 @@ ul {
 li {
     padding-bottom: 5px;
 }
-fieldset, legend {
+.formBox {
     font-family: monospace, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 30px;
