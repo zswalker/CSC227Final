@@ -21,6 +21,8 @@ a {
 }
 ul {
     list-style-type: circle;
+}
+li {
     padding-bottom: 5px;
 }
 legend {
