@@ -40,7 +40,9 @@ table {
 }
 th {
     color: azure;
+    align-items: center;
 }
 td {
     color: aliceblue;
+    align-items: center;
 }
