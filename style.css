@@ -46,3 +46,6 @@ td {
     color: aliceblue;
     align-items: center;
 }
+fieldset {
+    margin: left;
+}
