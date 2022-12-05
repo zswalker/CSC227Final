@@ -49,9 +49,7 @@
 			<ul>
 				<li><a href="html\add-vehicle.html">Add Vehicle</a></li>
 				<li><a href="html\sell-remove.html">Sell/Remove Vehicle</a></li>
-			</ul>
-			<br />
-			
+			</ul>	
 		</section>
 		<div id="about">				
 				<h2>About</h2>
