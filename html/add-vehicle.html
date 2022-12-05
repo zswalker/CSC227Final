@@ -21,9 +21,11 @@
 	<form action="..\php\add-vehicle.php" method="post">
     <fieldset>
         <legend>Vehicle Information</legend>
+        <div class="formBox">
         <label for="year">Year:</label>
         <input type="number" id="year" name="year" placeholder="EX: 1990">
-        <br />
+        </div>
+        <div class="formBox">
         <label>Make:</label>
 			<select name="make">
                 <option value="">Select</option>
@@ -48,10 +50,12 @@
                 <option value="Nissan">Nissan</option>
                 <option value="Toyota">Toyota</option>
 			</select>
-        <br />
+        </div>
+        <div class="formBox">
         <label for="model">Model:</label>
         <input type="text" id="model" name="model" placeholder="EX: Civic">
-        <br />
+        </div>
+        <div class="formBox">
         <label>Body Style:</label>
 			<select name="style">
                 <option value="">Select</option>
@@ -63,14 +67,16 @@
                 <option value="Truck">Truck</option>
                 <option value="Van">Van</option>
 			</select>
-        <br />
+        </div>
+        <div class="formBox">
         <label for="miles">Miles:</label>
         <input type="number" id="miles" name="miles" step="100" placeholder="EX: 10000">
-        <br />
+        </div>
+        <div class="formBox">
         <label for="price">Price: $</label>
         <input type="number" id="price" name="price" step="100" placeholder="EX: 13500">
-    <br />
-	<button type="submit" class="search">Add Vehicle</button>
+        </div>
+	    <button type="submit" class="search">Add Vehicle</button>
     </fieldset>
 	</form>
 <br />
