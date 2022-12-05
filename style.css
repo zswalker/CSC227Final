@@ -1,4 +1,5 @@
-* {
+body {
+    background-color: #004C99;
     display: flex;
     align-content: center;
 }
