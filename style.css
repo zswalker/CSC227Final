@@ -52,12 +52,38 @@ label {
     padding-bottom: 6px;
     color: azure;
 }
-button {
-    width: 180px;
-    height: 60px;
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #91C9FF;
-    outline: none;
-    transition: 1s ease-in-out;
+#search {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 75px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
 }
+#search:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #0CC;
+    transition: all .35s;
+}
+#search:hover {
+    color: #0CC;
+}
+#search:hover:after{
+    width: 100%;
+  }
