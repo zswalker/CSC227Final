@@ -1,6 +1,7 @@
 body {
     background-color: #004C99;
     padding: 4px;
+    box-sizing: border-box;
 }
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
