@@ -52,3 +52,12 @@ label {
     padding-bottom: 6px;
     color: azure;
 }
+button {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+}
