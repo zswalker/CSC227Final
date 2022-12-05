@@ -26,15 +26,9 @@
 	// Tests Form variables and adds vehicle to database
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// Create variables for testing
-		$v_year = $_POST['year'];
 		$v_make = $_POST['make'];
 		$v_model = $_POST['model'];
 		$error_message = "";
-
-		// Verify year
-		if ($v_year < 1886 || $v_year > 2025){
-			$error_message = "Error - Invalid Year Entered (Must be 1886 - 2025)";
-		}
 
 		// Verify make
 		if (empty($v_make)){
@@ -53,7 +47,7 @@
 			// SQL Query to search for year, make, and model, diplays error if necessary
 			$sql = "SELECT car_year, make, model, style, miles, price 
 					FROM inventory 
-					WHERE car_year='$v_year' && make='$v_make' && model='$v_model' && sold='Not Sold'";
+					WHERE make='$v_make' && model='$v_model' && sold='Not Sold'";
 			$result = $conn->query($sql);
 			if (!$result) {
 				die("Could not successfully run query from $dbname: ".mysqli_error($conn));
