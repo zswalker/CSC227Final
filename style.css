@@ -28,5 +28,5 @@ legend {
     font-size: 30px;
 }
 #tools img{
-    align-content: left;
+    float: left;
 }
