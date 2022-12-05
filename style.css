@@ -72,3 +72,6 @@ fieldset {
     border-color: aquamarine;
     color: aquamarine;
 }
+#back {
+    padding-bottom: -2px;
+}
