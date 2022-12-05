@@ -39,9 +39,9 @@ table {
 }
 th {
     color: azure;
-    align-items: center;
+    text-align: center;
 }
 td {
     color: aliceblue;
-    align-items: center;
+    text-align: center;
 }
