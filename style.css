@@ -6,7 +6,7 @@ h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 40px;
     color: #B266FF;
-    margin: center;
+    text-align: center;
 }
 p {
     font-family: monospace, 'Trebuchet MS', sans-serif;
