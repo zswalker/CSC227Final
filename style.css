@@ -37,6 +37,9 @@ li {
     margin: 1em;
 }
 fieldset > legend {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: monospace, 'Trebuchet MS', sans-serif;
     padding: 1rem;
 }
 #tools img{
