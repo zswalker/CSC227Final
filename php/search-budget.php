@@ -77,7 +77,7 @@
 					echo "<p>Vehicles below $".number_format($price_high, 0, ",")."</p>";
 				} else {
 					echo "<p>Vehicles between $".number_format($price_low, 0, ",").
-						" and ".number_format($price_high, 0, ",")."</p>";
+						" and $".number_format($price_high, 0, ",")."</p>";
 				}
 				echo "<table border='1'><thead><tr><th>Year</th><th>Make</th>
 					<th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"; 
