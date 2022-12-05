@@ -43,7 +43,6 @@
 			</nav>
 		</div>
 		<section id="tools">
-			<h3>Tools</h3>
 			<table>
 				<thead>
 					<tr>
