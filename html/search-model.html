@@ -20,34 +20,37 @@
 	<main>
 	<form action="..\php\search-model.php" method="post">
         <legend>Vehicle Information</legend>
-        <label>Select Vehicle Make:</label>
-            <select name="make">
-                <option value="">Select</option>
-                <option value="Acura">Acura</option>
-                <option value="Bently">Bently</option>
-                <option value="BMW">BMW</option>
-                <option value="Buick">Buick</option>
-                <option value="Cadillac">Cadillac</option>
-                <option value="Chevorlet">Chevorlet</option>
-                <option value="Chrysler">Chrysler</option>
-                <option value="Dodge">Dodge</option>
-                <option value="Ford">Ford</option>
-                <option value="General Motors">General Motors</option>
-                <option value="Honda">Honda</option>
-                <option value="Hyundai">Hyundai</option>
-                <option value="Jeep">Jeep</option>
-                <option value="Land Rover">Land Rover</option>
-                <option value="Mazda">Mazda</option>
-                <option value="Mini">Mini</option>
-                <option value="Mercedes Benz">Mercedes Benz</option>
-                <option value="Mitsubishi">Mitsubishi</option>
-                <option value="Nissan">Nissan</option>
-                <option value="Toyota">Toyota</option>
-            </select>
-        <label for="model">Model:</label>
-        <input type="text" id="model" name="model" placeholder="EX: Civic">
-    <br />
-	<button type="submit" id="search">Search</button>
+        <div class="formBox">
+            <label>Select Vehicle Make:</label>
+                <select name="make">
+                    <option value="">Select</option>
+                    <option value="Acura">Acura</option>
+                    <option value="Bently">Bently</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Buick">Buick</option>
+                    <option value="Cadillac">Cadillac</option>
+                    <option value="Chevorlet">Chevorlet</option>
+                    <option value="Chrysler">Chrysler</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Ford">Ford</option>
+                    <option value="General Motors">General Motors</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Land Rover">Land Rover</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Mercedes Benz">Mercedes Benz</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Toyota">Toyota</option>
+                </select>
+        </div>
+        <div class="formBox">
+            <label for="model">Model:</label>
+            <input type="text" id="model" name="model" placeholder="EX: Civic">
+        </div>
+	    <button type="submit" id="search">Search</button>
 	</form>
 <br />
 <br />

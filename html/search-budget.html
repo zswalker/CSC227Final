@@ -20,12 +20,15 @@
 	<main>
 	<form action="..\php\search-budget.php" method="post">
         <legend>Price Information</legend>
-        <label for="low">Low Price: $</label>
-        <input type="number" id="low" name="low" step="100" placeholder="EX: 1000">
-        <label for="high">High Price: $</label>
-        <input type="number" id="high" name="high" step="100" placeholder="EX: 20000">
-    <br />
-	<button type="submit" id="search">Search</button>
+		<div class="formBox">
+			<label for="low">Low Price: $</label>
+			<input type="number" id="low" name="low" step="100" placeholder="EX: 1000">
+		</div>
+		<div class="formBox">
+			<label for="high">High Price: $</label>
+			<input type="number" id="high" name="high" step="100" placeholder="EX: 20000">
+		</div>
+		<button type="submit" id="search">Search</button>
 	</form>
 <br />
 <br />
