@@ -39,7 +39,7 @@
 				<img src="images\cars.jpg" alt="Cars Image" style="width:400px;height:350px;">
 				<h2>About</h2>
 				<p>This website is used for finding your next used car from our used car lot.</p>
-				<br><br><br><br><br><br />
+				<br />
 			</nav>
 		</div>
 		<section id="tools">
