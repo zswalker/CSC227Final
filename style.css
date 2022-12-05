@@ -34,7 +34,7 @@ li {
     font-family: monospace, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 30px;
-    padding-bottom: .5em;
+    margin: 1em;
 }
 #tools img{
     float: left;
