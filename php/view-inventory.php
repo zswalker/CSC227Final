@@ -10,8 +10,8 @@
 <body>
 	<?php
         // Create header and back button
+        echo '<a href="..\index.php"><-Back</a><br />';
         echo "<header id='top'><h1>Used Car Lot</h1></header>";
-	    echo '<a href="..\index.php"><-Back</a><br />';
 
         // Create variables for connection
 		$dbhost = getenv("MYSQL_SERVICE_HOST");
