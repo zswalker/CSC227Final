@@ -64,7 +64,7 @@ input, select {
     border-color: #cff;
 }
 fieldset {
-    width: 100px;
+    display: inline-block;
     border-color: aquamarine;
     color: aquamarine;
 }
