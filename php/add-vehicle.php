@@ -62,7 +62,7 @@
 		}
 
 		// Verify price
-		if ($v_price < 0 || $v_miles > 200000){
+		if ($v_price < 0 || $v_price > 200000){
 			$error_message = "<h3>Error - Invalid Price Entered (Must be 0 - 10,000,000)</h3>";
 		}
 
