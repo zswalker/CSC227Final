@@ -45,7 +45,7 @@
 				if(!mysqli_query($conn, $sql)){
 					echo "<h3>Error - ".$conn->error."</h3>";
 				} else {
-					while($row = mysqli_fetch_assoc($result)) {
+					while($row = mysqli_fetch_assoc($conn, $sql)) {
 						$sold_price = $row['list_price'];
 					}
 				}
@@ -59,8 +59,8 @@
 			echo "<h3>".$error_message."</h3>";
 		} else {
             // Sets vehicle to sold in database, displays error if necessary
-			$sql = "UPDATE inventory SET sold='Sold', sold_price='$sold_price' WHERE id='$v_id'";
-			if(!mysqli_query($conn, $sql)){
+			$sql2 = "UPDATE inventory SET sold='Sold', sold_price='$sold_price' WHERE id='$v_id'";
+			if(!mysqli_query($conn, $sql2)){
 				echo "<h3>Error - ".$conn->error."</h3>";
 			} else {
 				echo "<h4>Vehicle Sold!</h4><br />";
