@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Car Lot Search</title>
+	<title>Car Lot - Sold</title>
 	<link href="..\style.css" type="text/css" rel="stylesheet" />
 </head>
 
@@ -11,7 +11,7 @@
 	<?php
         // Create header and back button
         echo '<a id="back" href="..\index.php">&lt;-Back</a><br />';
-        echo "<header id='top'><h1>Used Car Lot</h1></header>";
+        echo "<header id='top'><h1>Vehicles Sold</h1></header>";
 
         // Create variables for connection
 		$dbhost = getenv("MYSQL_SERVICE_HOST");
