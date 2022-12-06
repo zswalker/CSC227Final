@@ -72,7 +72,7 @@
 				}
 			} else {
 				// else: Prints table of vehicles found
-				echo "<h1>Vehicles Found</h1>";
+				echo "<header id='top'><h1>Vehicles Found</h1></header>";
 				if ($price_low == 0){
 					echo "<p>Vehicles below $".number_format($price_high, 0, ",")."</p>";
 				} else {
@@ -89,7 +89,7 @@
                         .number_format($row["list_price"], 0, ",")."</td></tr>";
 				}
 				echo "</table>";
-				echo "<p>Thank you for using my program.</p>";
+				echo "<p>Thank you for using my program - <a href='#top'>return to top</a></p>";
 				echo '<br><footer><a calss="white" href="..\index.php">
 					Return to Form Entry</a></footer>';
 			}
