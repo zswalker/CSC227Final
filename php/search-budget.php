@@ -79,8 +79,8 @@
 					echo "<p>Vehicles between $".number_format($price_low, 0, ",").
 						" and $".number_format($price_high, 0, ",")."</p>";
 				}
-				echo "<table border='1'><thead><tr><th>Year</th><th>Make</th>
-					<th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"; 
+				echo "<table border='1'><thead><tr><th>ID</th><th>Year</th><th>Make</th>
+                    <th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>";
 				while($row = mysqli_fetch_assoc($result)) {
 					echo "<tr><td>".$row["id"]."</td><td>".$row["car_year"]."</td>
 						<td>".$row["make"]."</td><td>".$row["model"]."</td>
