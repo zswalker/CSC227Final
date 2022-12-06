@@ -64,12 +64,12 @@
 
 		// Verify purchase price
 		if ($pur_price < 0 || $pur_price > 200000){
-			$error_message = "<h3>Error - Invalid Purchase Price Entered (Must be 0 - 10,000,000)</h3>";
+			$error_message = "<h3>Error - Invalid Purchase Price Entered (Must be 0 - 200,000)</h3>";
 		}
 
 		// Verify list price
 		if ($list_price < 0 || $list_price > 200000){
-			$error_message = "<h3>Error - Invalid List Price Entered (Must be 0 - 10,000,000)</h3>";
+			$error_message = "<h3>Error - Invalid List Price Entered (Must be 0 - 200,000)</h3>";
 		}
 
 		// Display error message if necessary, else adds vehicle
