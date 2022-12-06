@@ -41,7 +41,7 @@
 				echo "<h3>".$error_message."</h3>";
 			} else {
 				// SQL Query to search for model, diplays error if necessary
-				$sql = "SELECT car_year, make, model, style, miles, price 
+				$sql = "SELECT * 
 						FROM inventory WHERE style='$v_style' && sold='Not Sold'";
 				$result = $conn->query($sql);
 				if (!$result) {
