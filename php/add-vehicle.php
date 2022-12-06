@@ -82,7 +82,7 @@
 					VALUES($v_year, '$v_make', '$v_model', '$v_style', 
 						$v_miles, 'Not Sold', $list_price, '$pur_price')";
 			if(!mysqli_query($conn, $sql)){
-				echo "Error - ".$conn->error;
+				echo "<h3>Error - ".$conn->error."</h3>";
 			} else {
 				echo "<h4>Vehicle Successfully Added!</h4><br>";
 			}
