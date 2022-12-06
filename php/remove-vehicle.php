@@ -19,12 +19,13 @@
 	$dbpwd = getenv("MYSQL_PASSWORD");
 	$dbname = getenv("MYSQL_DATABASE");
 
-	// Connect to database and executes main. Prints error if unsuccessful.
+	// Connect to database. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 	if($conn->connect_error){
 		echo "<h3>Connection error: ".mysqli_connect_error()."</h3>";
 		exit();
 	}
+
 	// Tests Form variables and adds vehicle to database
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// Create variable used in form

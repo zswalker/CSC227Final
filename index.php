@@ -9,25 +9,27 @@
 
 <body>
 <?php
-		$dbhost = getenv("MYSQL_SERVICE_HOST");
-		$dbport = getenv("MYSQL_SERVICE_PORT");
-		$dbuser = getenv("MYSQL_USER");
-		$dbpwd = getenv("MYSQL_PASSWORD");
-		$dbname = getenv("MYSQL_DATABASE");
+	// Create variables for connection
+	$dbhost = getenv("MYSQL_SERVICE_HOST");
+	$dbport = getenv("MYSQL_SERVICE_PORT");
+	$dbuser = getenv("MYSQL_USER");
+	$dbpwd = getenv("MYSQL_PASSWORD");
+	$dbname = getenv("MYSQL_DATABASE");
 
-		$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-		if($conn->connect_error){
-			echo "Connection error: ".$conn->connect_error;
-			exit();
-		} else {
-			$sql = "create table if not exists inventory(id serial primary key,
-				car_year YEAR not null, make varchar(30) not null, model varchar(30) not null,
-				style varchar(30) not null, miles int(6) not null, list_price int(6) not null, 
-				pur_price int(6) not null, sold varchar(8) not null, sold_price int(6))";
-			$result = mysqli_query($conn, $sql);
-			$conn->close();
-		}
-	
+	// Connect to database and executes sql. Prints error if unsuccessful.
+	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+	if($conn->connect_error){
+		echo "Connection error: ".$conn->connect_error;
+		exit();
+	} else {
+		// Creates table if doesn't already exist
+		$sql = "CREATE TABLE if not exists inventory(id serial primary key,
+			car_year YEAR not null, make varchar(30) not null, model varchar(30) not null,
+			style varchar(30) not null, miles int(6) not null, list_price int(6) not null, 
+			pur_price int(6) not null, sold varchar(8) not null, sold_price int(6))";
+		$result = mysqli_query($conn, $sql);
+		$conn->close();
+	}
 ?>
 <div class="container">
 	<header id="top">

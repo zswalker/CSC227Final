@@ -19,57 +19,57 @@
 	$dbpwd = getenv("MYSQL_PASSWORD");
 	$dbname = getenv("MYSQL_DATABASE");
 
-	// Connect to database and executes main. Prints error if unsuccessful.
+	// Connect to database and executes sql. Prints error if unsuccessful.
 	$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 	if($conn->connect_error){
 		echo "<p>Connection error: ".mysqli_connect_error()."</p>";
-	} else {
-		// Tests Form variables and adds vehicle to database
+		exit();
+	}
 
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			// Create variables for testing
-			$v_style = $_POST['style'];
-			$error_message = "";
+	// Tests Form variables and adds vehicle to database
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		// Create variables for testing
+		$v_style = $_POST['style'];
+		$error_message = "";
 
-			// Verify Style
-			if (empty($v_style)){
-				$error_message = "<h3>Error - Body Style not selected</h3>";
+		// Verify Style
+		if (empty($v_style)){
+			$error_message = "<h3>Error - Body Style not selected</h3>";
+		}
+
+		// Displays error message if necessary, else searches for style
+		if ($error_message != ""){
+			echo "<h3>".$error_message."</h3>";
+		} else {
+			// SQL Query to search for model, diplays error if necessary
+			$sql = "SELECT * 
+					FROM inventory WHERE style='$v_style' && sold='Not Sold'";
+			$result = $conn->query($sql);
+			if (!$result) {
+				die("<h3>Could not successfully run query from $dbname: ".mysqli_error($conn)."</h3>");
 			}
-
-			// Displays error message if necessary, else searches for style
-			if ($error_message != ""){
-				echo "<h3>".$error_message."</h3>";
+	
+			// Displays message if no results found
+			if (mysqli_num_rows($result) == 0) {
+				echo "<h3>No vehicles found with '".$v_style."' body style</h3>";
 			} else {
-				// SQL Query to search for model, diplays error if necessary
-				$sql = "SELECT * 
-						FROM inventory WHERE style='$v_style' && sold='Not Sold'";
-				$result = $conn->query($sql);
-				if (!$result) {
-					die("<h3>Could not successfully run query from $dbname: ".mysqli_error($conn)."</h3>");
+				// else: Prints table of vehicles found
+				echo "<header id='top'><h1>Vehicles Found</h1></header>";
+				echo "<table border='1'><thead><tr><th>ID</th><th>Year</th><th>Make</th>
+					<th>Model</th><th>Style</th><th>Miles</th><th>List Price</th></tr></thead><tbody>";
+				while($row = mysqli_fetch_assoc($result)) {
+					echo "<tr><td>".$row["id"]."</td><td>".$row["car_year"]."</td>
+						<td>".$row["make"]."</td><td>".$row["model"]."</td>
+						<td>".$row["style"]."</td><td>"
+						.number_format($row["miles"], 0, ",")."</td><td>$"
+						.number_format($row["list_price"], 0, ",")."</td></tr>";
 				}
-		
-				// Displays message if no results found
-				if (mysqli_num_rows($result) == 0) {
-					echo "<h3>No vehicles found with '".$v_style."' body style</h3>";
-				} else {
-					// else: Prints table of vehicles found
-					echo "<header id='top'><h1>Vehicles Found</h1></header>";
-					echo "<table border='1'><thead><tr><th>ID</th><th>Year</th><th>Make</th>
-                    	<th>Model</th><th>Style</th><th>Miles</th><th>List Price</th></tr></thead><tbody>";
-					while($row = mysqli_fetch_assoc($result)) {
-						echo "<tr><td>".$row["id"]."</td><td>".$row["car_year"]."</td>
-							<td>".$row["make"]."</td><td>".$row["model"]."</td>
-							<td>".$row["style"]."</td><td>"
-							.number_format($row["miles"], 0, ",")."</td><td>$"
-							.number_format($row["list_price"], 0, ",")."</td></tr>";
-					}
-					echo "</table>";
-					echo "<p>Thank you for using my program - <a href='#top'>return to top</a></p>";
-					echo '<br><footer><a calss="white" href="..\index.php">
-						Return to Form Entry</a></footer>';
-				}
-				$conn->close();
+				echo "</table>";
+				echo "<p>Thank you for using my program - <a href='#top'>return to top</a></p>";
+				echo '<br><footer><a calss="white" href="..\index.php">
+					Return to Form Entry</a></footer>';
 			}
+			$conn->close();
 		}
 	}
 ?>
