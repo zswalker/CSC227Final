@@ -56,7 +56,7 @@
 		} else {
 			// SQL Query to search for model, diplays error if necessary
 			$sql = "SELECT * FROM inventory 
-					WHERE price>'$price_low' && price<'$price_high' && sold='Not Sold'";
+					WHERE list_price>'$price_low' && list_price<'$price_high' && sold='Not Sold'";
 			$result = $conn->query($sql);
 			if (!$result) {
 				die("<h3>Could not successfully run query from $dbname: ".mysqli_error($conn)."</h3>");
