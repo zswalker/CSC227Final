@@ -38,7 +38,7 @@
 			<img src="images\cars.jpg" alt="Cars Image" style="width:450px;height:350px;">
 			<h2>Search</h2>
 			<ul>
-				<li><a href="html\search-model.html">Search By Year/Make/Model</a></li>
+				<li><a href="html\search-model.html">Search By Make/Model</a></li>
 				<li><a href="html\search-budget.html">Search By Price</a></li>
 				<li><a href="html\search-style.html">Search By Style</a></li>
 				<br />
