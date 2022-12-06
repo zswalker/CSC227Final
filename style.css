@@ -44,7 +44,7 @@ li {
     font-size: 25px;
     padding-bottom: 2rem;
 }
-fieldset > p {
+.formBox > p {
     font-size: larger;
 }
 fieldset > legend {
