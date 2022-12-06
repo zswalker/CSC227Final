@@ -84,7 +84,7 @@
 			if(!mysqli_query($conn, $sql)){
 				echo "<h3>Error - ".$conn->error."</h3>";
 			} else {
-				echo "<h4>Vehicle Successfully Added!</h4><br>";
+				echo "<h4>Vehicle Successfully Added!</h4><br />";
 			}
 			echo '<br /><a href="..\index.php">Return to Home Page</a>';
 			$conn->close();
