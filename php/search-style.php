@@ -53,7 +53,7 @@
 					echo "<h3>No vehicles found with '".$v_style."' body style</h3>";
 				} else {
 					// else: Prints table of vehicles found
-					echo "<h1>Vehicles Found</h1>";
+					echo "<header id='top'><h1>Vehicles Found</h1></header>";
 					echo "<table border='1'><thead><tr><th>ID</th><th>Year</th><th>Make</th>
                     	<th>Model</th><th>Style</th><th>Miles</th><th>List Price</th></tr></thead><tbody>";
 					while($row = mysqli_fetch_assoc($result)) {
@@ -64,7 +64,7 @@
 							.number_format($row["list_price"], 0, ",")."</td></tr>";
 					}
 					echo "</table>";
-					echo "<p>Thank you for using my program.</p>";
+					echo "<p>Thank you for using my program - <a href='#top'>return to top</a></p>";
 					echo '<br><footer><a calss="white" href="..\index.php">
 						Return to Form Entry</a></footer>';
 				}
