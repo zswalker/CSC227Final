@@ -78,7 +78,7 @@
 		} else {
 			// Adds vehicle to database, displays error if necessary
 			$sql = "INSERT INTO inventory(car_year, make, model, style, 
-						miles, sold, price_list, price_pur) 
+						miles, sold, list_price, pur_price) 
 					VALUES($v_year, '$v_make', '$v_model', '$v_style', 
 						$v_miles, 'Not Sold', $list_price, '$pur_price')";
 			if(!mysqli_query($conn, $sql)){
