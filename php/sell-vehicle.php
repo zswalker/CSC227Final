@@ -32,22 +32,32 @@
 		$v_id = $_POST['car_id'];
 		$sold_price = $_POST['price'];
 		$error_message = "";
-
+		
 		// Verify vehicle ID
 		if (empty($v_id)){
 			$error_message = "<h3>Error - Vehicle ID not entered</h3>";
+		}
+		$sql = "SELECT * FROM inventory WHERE id='$v_id'";
+		$result = mysqli_query($conn, $sql);
+		if (!$result){
+			echo "<h3>Error - ".$conn->error."</h3>";
+		} else {
+			if (mysqli_num_rows($result) == 0) {
+				echo "<h3>Vehicle ID '".$v_id"' is not in inventory</h3>";
+				exit();
+			}
 		}
 
 		// Verify sold price
 		if (empty($sold_price) || $sold_price < 0 || $sold_price > 200000){
 			if (empty($sold_price)){
 				// Sets vehicle sold price to list price if left empty
-				$sql = "SELECT * FROM inventory WHERE id='$v_id'";
-				$result = mysqli_query($conn, $sql);
-				if(!$result){
+				$sql2 = "SELECT * FROM inventory WHERE id='$v_id'";
+				$result2 = mysqli_query($conn, $sql2);
+				if(!$result2){
 					echo "<h3>Error - ".$conn->error."</h3>";
 				} else {
-					while($row = mysqli_fetch_assoc($result)) {
+					while($row = mysqli_fetch_assoc($result2)) {
 						$sold_price = $row['list_price'];
 					}
 				}
@@ -61,8 +71,8 @@
 			echo "<h3>".$error_message."</h3>";
 		} else {
             // Sets vehicle to sold in database, displays error if necessary
-			$sql2 = "UPDATE inventory SET sold='Sold', sold_price='$sold_price' WHERE id='$v_id'";
-			if(!mysqli_query($conn, $sql2)){
+			$sql3 = "UPDATE inventory SET sold='Sold', sold_price='$sold_price' WHERE id='$v_id'";
+			if(!mysqli_query($conn, $sql3)){
 				echo "<h3>Error - ".$conn->error."</h3>";
 			} else {
 				echo "<h4>Vehicle Sold!</h4><br />";
