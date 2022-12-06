@@ -38,12 +38,12 @@
             } else {
                 // else: Prints table of vehicles found
                 echo "<table border='1'><thead><tr><th>ID</th><th>Year</th><th>Make</th>
-                <th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"; 
+                    <th>Model</th><th>Style</th><th>Miles</th><th>Price</th></tr></thead><tbody>"; 
                 while($row = mysqli_fetch_assoc($result)) {
-                    echo("<tr><td>".$row["id"]."</td><td>".$row["car_year"]."</td>
+                    echo "<tr><td>".$row["id"]."</td><td>".$row["car_year"]."</td>
                     <td>".$row["make"]."</td><td>".$row["model"]."</td>
                     <td>".$row["style"]."</td><td>".number_format($row["miles"], 0, ",")."</td><td>$"
-                    .number_format($row["price"], 0, ",")."</td></tr>");
+                    .number_format($row["price"], 0, ",")."</td></tr>";
                 }
                 echo "</table>";
                 echo "<p>Thank you for using my program - <a href='#top'>return to top</a></p>";
