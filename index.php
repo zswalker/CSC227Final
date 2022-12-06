@@ -45,7 +45,6 @@
 				<li><a href="php\view-inventory.php">View All Vehicles</a></li>
 				<li><a href="php\sold-vehicles.php">View Sold Vehicles</a></li>
 			</ul>
-			<br />
 			<h2>Modify</h2>
 			<ul>
 				<li><a href="html\add-vehicle.html">Add Vehicle</a></li>
