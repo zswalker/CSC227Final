@@ -29,7 +29,7 @@
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// Create variable used in form
 		$v_id = $_POST['car_id'];
-		$v_price = $_POST['price'];
+		$sold_price = $_POST['price'];
 		$error_message = "";
 
 		// Verify vehicle ID
@@ -38,9 +38,17 @@
 		}
 
 		// Verify sold price
-		if (empty($v_price) || $v_price < 0 || $v_price > 200000){
-			if (empty($v_price)){
-				$error_message = "<h3>Error - Vehicle price not entered</h3>";
+		if (empty($sold_price) || $sold_price < 0 || $sold_price > 200000){
+			if (empty($sold_price)){
+				// Sets vehicle sold price to list price if left empty
+				$sql = "SELECT * FROM inventory WHERE id='$v_id'";
+				if(!mysqli_query($conn, $sql)){
+					echo "<h3>Error - ".$conn->error."</h3>";
+				} else {
+					while($row = mysqli_fetch_assoc($result)) {
+						$sold_price = $row['list_price'];
+					}
+				}
 			} else {
 				$error_message = "<h3>Error - Vehicle price not between $0 and $200,000</h3>";
 			}
@@ -51,7 +59,7 @@
 			echo "<h3>".$error_message."</h3>";
 		} else {
             // Sets vehicle to sold in database, displays error if necessary
-			$sql = "UPDATE inventory SET sold='Sold', sold_price='$v_price' WHERE id='$v_id'";
+			$sql = "UPDATE inventory SET sold='Sold', sold_price='$sold_price' WHERE id='$v_id'";
 			if(!mysqli_query($conn, $sql)){
 				echo "<h3>Error - ".$conn->error."</h3>";
 			} else {
