@@ -38,7 +38,7 @@
 			$price_low = 0;
 		}
 		if (empty($price_high)){
-			$price_high = 10000000;
+			$price_high = 200000;
 		}
 		if ($price_low < 0){
 			$error_message = "<h3>Error - Price can not be nagative</h3>";
