@@ -48,9 +48,8 @@
 			echo "<h3>".$error_message."</h3>";
 		} else {
 			// SQL Query to search for year, make, and model, diplays error if necessary
-			$sql = "SELECT * 
-					FROM inventory 
-					WHERE make='$v_make' && model='$v_model' && sold='Not Sold'";
+			$sql = "SELECT * FROM inventory 
+					WHERE make='$v_make' && model LIKE '%$v_model%' && sold='Not Sold'";
 			$result = $conn->query($sql);
 			if (!$result) {
 				die("<h3>Could not successfully run query from $dbname: ".mysqli_error($conn)."</h3>");
