@@ -43,7 +43,7 @@
 			echo "<h3>Error - ".$conn->error."</h3>";
 		} else {
 			if (mysqli_num_rows($result) == 0) {
-				echo "<h3>Vehicle ID '".$v_id"' is not in inventory</h3>";
+				echo "<h3>Vehicle ID '".$v_id."' is not in inventory</h3>";
 				exit();
 			}
 		}
