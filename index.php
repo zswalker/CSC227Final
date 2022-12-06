@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!--
+		Filename: index.php
+		Author: Zach Walker
+		Purpose: Homepage for used car lot. Creates inventory if needed, and
+			displays links to all html forms and tools
+	-->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Car Lot Inventory</title>

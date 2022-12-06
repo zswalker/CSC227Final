@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!--
+		Filename: add_vehicle.php
+		Author: Zach Walker
+		Purpose: Verifies form info and adds vehicle to sql database
+	-->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Car Lot Modify</title>

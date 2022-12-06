@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--
+		Filename: sold_vehicles.php
+		Author: Zach Walker
+		Purpose: Displays all sold vehicles in sql database and displays total revenue
+	-->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Car Lot - Sold</title>

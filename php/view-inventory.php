@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--
+		Filename: view_inventory.php
+		Author: Zach Walker
+		Purpose: Displays all listed vehicles in sql database
+	-->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Car Lot Search</title>
@@ -54,7 +59,6 @@
                 Return to Homepage</a></footer>';
             $conn->close();
         }
-	
     ?>
 </body>
 </html>
