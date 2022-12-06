@@ -52,7 +52,7 @@
                     $total += ($row["sold_price"] - $row["pur_price"]);
                 }
                 echo "</table>";
-                echo "<h4>Total Revenue: $".$total."</h4><br />";
+                echo "<h4>Total Revenue: $".number_format($total, 0, ",")."</h4><br />";
                 echo "<p>Thank you for using my program - <a href='#top'>return to top</a></p>";
             }
             echo '<br><footer><a calss="white" href="..\index.php">
