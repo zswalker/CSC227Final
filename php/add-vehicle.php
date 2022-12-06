@@ -33,7 +33,8 @@
 		$v_model = $_POST['model'];
 		$v_style = $_POST['style'];
 		$v_miles = $_POST['miles'];
-		$v_price = $_POST['price'];
+		$pur_price = $_POST['price_pur'];
+		$list_price = $_POST['price_list'];
 		$error_message = "";
 		
 		// Verify year
@@ -61,9 +62,14 @@
 			$error_message = "<h3>Error - Invalid Miles Entered (Must be 0 - 500,000)</h3>";
 		}
 
-		// Verify price
-		if ($v_price < 0 || $v_price > 200000){
-			$error_message = "<h3>Error - Invalid Price Entered (Must be 0 - 10,000,000)</h3>";
+		// Verify purchase price
+		if ($pur_price < 0 || $pur_price > 200000){
+			$error_message = "<h3>Error - Invalid Purchase Price Entered (Must be 0 - 10,000,000)</h3>";
+		}
+
+		// Verify list price
+		if ($list_price < 0 || $list_price > 200000){
+			$error_message = "<h3>Error - Invalid List Price Entered (Must be 0 - 10,000,000)</h3>";
 		}
 
 		// Display error message if necessary, else adds vehicle
@@ -71,8 +77,10 @@
 			echo "<h3>".$error_message."</h3>";
 		} else {
 			// Adds vehicle to database, displays error if necessary
-			$sql = "INSERT INTO inventory(car_year, make, model, style, miles, price, sold) 
-			VALUES($v_year, '$v_make', '$v_model', '$v_style', $v_miles, $v_price, 'Not Sold')";
+			$sql = "INSERT INTO inventory(car_year, make, model, style, 
+						miles, sold, price_list, price_pur) 
+					VALUES($v_year, '$v_make', '$v_model', '$v_style', 
+						$v_miles, 'Not Sold', $list_price, '$pur_price')";
 			if(!mysqli_query($conn, $sql)){
 				echo "Error - ".$conn->error;
 			} else {
