@@ -42,10 +42,11 @@
 			if (empty($sold_price)){
 				// Sets vehicle sold price to list price if left empty
 				$sql = "SELECT * FROM inventory WHERE id='$v_id'";
-				if(!mysqli_query($conn, $sql)){
+				$result = mysqli_query($conn, $sql)
+				if(!$result){
 					echo "<h3>Error - ".$conn->error."</h3>";
 				} else {
-					while($row = mysqli_fetch_assoc($conn, $sql)) {
+					while($row = mysqli_fetch_assoc($result)) {
 						$sold_price = $row['list_price'];
 					}
 				}
