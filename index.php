@@ -42,7 +42,7 @@
 				<li><a href="html\search-budget.html">Search By Price</a></li>
 				<li><a href="html\search-style.html">Search By Style</a></li>
 				<br />
-				<li><a href="php\view-inventory.php">View All Vehicles</a></li>
+				<li><a href="php\view-inventory.php">View Inventory</a></li>
 				<li><a href="php\sold-vehicles.php">View Sold Vehicles</a></li>
 			</ul>
 			<h2>Modify</h2>
