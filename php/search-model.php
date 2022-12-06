@@ -38,11 +38,6 @@
 			$error_message = "<h3>Error - Make not selected</h3>";
 		}
 
-		// Verify model entry
-		if (empty($v_model)){
-			$error_message = "<h3>Error - Model not entered</h3>";
-		}
-
 		// Displays error message if necessary, else searches for vehicle
 		if ($error_message != ""){
 			echo "<h3>".$error_message."</h3>";
