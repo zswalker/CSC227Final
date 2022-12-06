@@ -45,7 +45,7 @@
 			if(!mysqli_query($conn, $sql)){
 				echo "<h3>Error - ".$conn->error."</h3>";
 			} else {
-				echo "<h3>Vehicle Successfully Removed!</h3>";
+				echo "<h4>Vehicle Successfully Removed!</h4>";
 			}
 			echo '<br /><a href="..\index.php">Return to Home Page</a>';
 			$conn->close();
