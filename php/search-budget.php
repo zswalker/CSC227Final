@@ -96,7 +96,7 @@
 				echo "</table>";
 				echo "<p>Thank you for using my program - <a href='#top'>return to top</a></p>";
 				echo '<br><footer><a calss="white" href="..\index.php">
-					Return to Form Entry</a></footer>';
+					Return to Homepage</a></footer>';
 			}
 			$conn->close();
 		}

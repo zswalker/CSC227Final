@@ -63,7 +63,7 @@
 			} else {
 				echo "<h4>Vehicle Successfully Removed!</h4>";
 			}
-			echo '<br /><a href="..\index.php">Return to Home Page</a>';
+			echo '<br /><a href="..\index.php">Return to Homepage</a>';
 			$conn->close();
 		}
 	}

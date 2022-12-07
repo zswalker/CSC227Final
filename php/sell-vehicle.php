@@ -82,7 +82,7 @@
 			} else {
 				echo "<h4>Vehicle Sold!</h4><br />";
 			}
-			echo '<br /><a href="..\index.php">Return to Home Page</a>';
+			echo '<br /><a href="..\index.php">Return to Homepage</a>';
 			$conn->close();
 		}
 	}
